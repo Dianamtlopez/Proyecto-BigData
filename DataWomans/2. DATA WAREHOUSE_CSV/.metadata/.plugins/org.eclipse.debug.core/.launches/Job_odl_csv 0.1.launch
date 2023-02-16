@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.talend.designer.runprocess.jobLaunchConfiguration">
+    <stringAttribute key="CURRENT_PROJECT_NAME" value="ETL_Data_Womans_Company"/>
+    <stringAttribute key="JOB_PROJECT_TECH_LABEL" value="ETL_DATA_WOMANS_COMPANY"/>
+    <stringAttribute key="TALEND_JOB_ID" value="_jIFs4K1OEe2ufvFLFy2I9g"/>
+    <stringAttribute key="TALEND_JOB_NAME" value="Job_odl_csv"/>
+    <stringAttribute key="TALEND_JOB_VERSION" value="0.1"/>
+</launchConfiguration>

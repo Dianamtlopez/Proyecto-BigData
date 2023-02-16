@@ -1,0 +1,1379 @@
+---
+title: "analisis_exploratorio_R"
+author: "Data Women's Company"
+format: html
+editor: visual
+---
+
+# ANÁLISIS EXPLORATORIO CON R
+
+En este apartado se nos solicita hacer un estudio estadístico con R o Python, según preferencia personal, y averiguar cuáles son las métricas adecuadas para el dataset. No olvidemos:
+
+a\. Revisión de la calidad de los datos
+
+b\. Detección outliers (rango de variables), imputación valores nulos.
+
+c\. Boxplots, histogramas, etc.
+
+d\. Normalización de los valores de las tablas (quitar tildes, "dobles espacios", etc.
+
+Mediante Python se ha realizado la limpieza, normalización e imputación de datos (puntos 3.a, 3.b, 3.d. del proyecto) y análisis inicial de datos (2.a ). También se ha preparado el dataset limpio que se emplea en la definición e implementación del datawarehouse (2.b, 2c).
+
+Se han realizado gráficas para familiarizarnos con los datos, explorarlos y tomar decisiones iniciales (3.c).
+
+Una vez conocidos los datos y familiarizados con ellos (1), se plantea un problema que resolveremos seleccionando métricas de interés, muestreando (2.a), el dataset limpio. Este problema está relacionado con la tarea de modelado (5): hacer un algoritmo de regresión lineal que prediga el precio de un inmueble en función de las características que elegidas.
+
+Por lo tanto, el objetivo del ANÁLISIS EXPLORATORIO CON R es el de seleccionar las métricas de interés para resolver las preguntas del problema (5), detectar los outliers (3.b) de dichas métricas y generar dataframes adecuados para generar un modelado de más calidad (5). Nos apoyamos del análisis visual realizado paralelamente en Tableau (4).
+
+## El problema
+
+Data Women's Company recibe el encargo de un cliente. Acaba de heredar dos apartamentos de características similares ubicados en Madrid. Uno de ellos en la Calle de Amparo y el otro en la Calle de Méndez Álvaro.
+
+Desea incorporar los apartamentos a la plataforma digital Airbnb, dedicada a la oferta de alojamientos particulares y turísticos mediante la cual los anfitriones pueden publicitar y contratar el arriendo de sus propiedades con sus huéspedes, para obtener rentabilidad a sus nuevas propiedades. Nos dice que las dos propiedades están muy bien comunicadas y cerca de la Estación Madrid-Puerta de Atocha.
+
+Solicita que le indiquemos a qué *precio base* debería publicar cada uno de los alojamientos teniendo en cuenta las características de éstos. Ambos son *apartamentos q*ue serán rentados de manera *íntegra*. Tienen *dos habitaciones*, con *una cama matrimonial cada una*, y *un baño*. Además, los apartamentos cuentan con cocina totalmente equipada y sala de estar con *sofá-cama* donde podrían dormir hasta *dos huéspedes extra*. Nos comenta que se podrían alojar hasta *6 huéspedes*, pero sólo quiere incluir en el precio base a un huésped e incrementará el precio posteriormente en relación a la cantidad de huéspedes que reserven. Tampoco quiere que se incluya la tasa de limpieza ni el depósito por daños.
+
+También desea conocer cómo puede variar el precio según la cantidad de reviews que tenga y en qué grado es recomendable que se implique en la gestión de los alojamientos. ¿Es rentable ser superanfitrión?
+
+### ¿Qué datos debemos seleccionar y qué variables debemos tener en cuenta?
+
+A continuación, se indican las métricas que se seleccionan tras el análisis inicial en Python y de acuerdo a lo que nos solicita el cliente.
+
+-   Ubicación: investigamos en qué barrios y distritos se ubican los alojamientos.
+
+    -   Calle de Amparo:
+
+        -   Distrito: *Centro - selección 1*
+
+        -   Barrio: *Embajadores - subselección 2*
+
+    -   Calle de Méndez Álvaro
+
+        -   Distrito: *Arganzuela - selección 2*
+
+        -   Barrio: *Palos de Moguer - subselección 2*
+
+    ![](images/image-1742127039.png){width="444"}
+
+-   Características de los alojamientos
+
+    -   Selección de datos:
+
+        -   Tipo de propiedad: *apartamento - selección 1 y 2*
+
+        -   Tipo de arriendo: *completo - selección 1 y 2*
+
+        -   El número de baños no es representativo, tal como observamos en el análisis inicial.
+
+-   Métricas variables:
+
+    -   Número de habitaciones: 2 *- Variable independiente (lo vamos a considerar variable para que sea más generalista el modelo).*
+
+    -   *Número de camas*: *2* y 1 sofá-cama. - Variable independiente (lo vamos a considerar variable independiente para que sea más generalista, está relacionada con el número de habitaciones)
+
+    -   *Número máximo de huéspedes*: 6 - Variable independiente, está relacionado con el número de camas.
+
+    -   *Número de huéspedes incluidos*: 1 - Variable independiente
+
+    -   Otras métricas de interés:
+
+        -   *Número de reviews* - Variable independiente
+
+        -   *Programa de superanfitrión* - Variable independiente
+
+    -   *Precio - Variable dependiente*
+
+Instalamos y cargamos los paquetes necesarios.
+
+```{r}
+install.packages("tidyverse")
+library(tidyverse)
+install.packages("GGally")
+library(GGally)
+```
+
+Cargamos el df de alojamientos y lo revisamos: dimensiones y estructura
+
+```{r}
+df <- read.csv(file.choose(), sep =";", stringsAsFactors = TRUE )
+head(df)
+tail(df)
+```
+
+```{r}
+dim(df)
+```
+
+```{r}
+str(df)
+```
+
+## Selección de datos
+
+El df está limpio y los tipos de variables son correctas para poder proceder a seleccionar los datos que nos interesan, analizarlos (detectar outliers, decidir su utilidad) y realizar el modelo.
+
+En primer lugar vamos a seleccionar todos los apartamentos de Madrid que se rentan íntegramente y analizaremos los outliers posteriormente y seleccionamos también los datos de hosts y superhosts para hacer dos grupos diferentes de análisis para evaluar la diferencia de precio.
+
+-   df_madrid
+
+    -   Property.Type == `"apartment"`
+
+    -   Room.Type == `"entire home/apt"`
+
+-   df_host
+
+    -   Property.Type == `"apartment"`
+
+    -   Room.Type == `"entire home/apt"`
+
+    -   Features == 0
+
+-   df_super
+
+    -   Property.Type == `"apartment"`
+
+    -   Room.Type == `"entire home/apt"`
+
+    -   Features == 1
+
+```{r}
+df_madrid <- dplyr:: filter(df, Property.Type == "apartment", Room.Type == "entire home/apt")
+df_madrid
+```
+
+```{r}
+df_host <- dplyr:: filter(df, Property.Type == "apartment", Room.Type == "entire home/apt", Features == 0)
+df_host
+```
+
+```{r}
+df_super <- dplyr:: filter(df, Property.Type == "apartment", Room.Type == "entire home/apt", Features == 1)
+df_super
+```
+
+Vamos a genera dos selecciones en relación a los distritos para observar la cantidad de datos de las que disponemos:
+
+1.  df_amparo
+
+    -   Neighbourhood.Group.Cleansed: `"centro"`
+
+    -   Property.Type: `"apartment"`
+
+    -   Room.Type: `"entire home/apt"`
+
+-   df_alvaro
+
+    -   Neighbourhood.Group.Cleansed: `"arganzuela"`
+
+    -   Property.Type: `"apartment"`
+
+    -   Room.Type: `"entire home/apt"`
+
+```{r}
+df_amparo <- dplyr:: filter(df, Neighbourhood.Group.Cleansed == "centro", Property.Type == "apartment", Room.Type == "entire home/apt")
+df_amparo
+```
+
+```{r}
+df_alvaro <- dplyr:: filter(df, Neighbourhood.Group.Cleansed == "arganzuela", Property.Type == "apartment", Room.Type == "entire home/apt")
+df_alvaro
+```
+
+Vamos a genera dos selecciones en relación a los barrios para observar la cantidad de datos de las que disponemos:
+
+1.  df_amparito
+
+    -   Neighbourhood.Cleansed: `"embajadores"`
+
+    -   Property.Type: `"apartment"`
+
+    -   Room.Type: `"entire home/apt"`
+
+2.  df_alvarito
+
+    -   Neighbourhood.Cleansed: `"palos de moguer"`
+
+    -   Property.Type: `"apartment"`
+
+    -   Room.Type: `"entire home/apt"`
+
+```{r}
+df_amparito <- dplyr:: filter(df, Neighbourhood.Cleansed == "embajadores", Property.Type == "apartment", Room.Type == "entire home/apt")
+df_amparito
+```
+
+```{r}
+df_alvarito <- dplyr:: filter(df, Neighbourhood.Cleansed == "palos de moguer", Property.Type == "apartment", Room.Type == "entire home/apt")
+df_alvarito
+```
+
+## Análisis de outliers
+
+Observamos los outliers de df_madrid, df_host y df_super para la variables a tener en cuenta: Bedrooms, Beds, Accommodates, Guests.Included, Number.of.Reviews, Price.
+
+```{r}
+boxplot.stats(df_madrid$Bedrooms)
+boxplot(df_madrid$Bedrooms)
+```
+
+```{r}
+boxplot.stats(df_madrid$Beds)
+boxplot(df_madrid$Beds)
+```
+
+```{r}
+boxplot.stats(df_madrid$Accomodates)
+boxplot(df_madrid$Accommodates)
+```
+
+```{r}
+boxplot.stats(df_madrid$Guests.Included)
+boxplot(df_madrid$Guests.Included)
+```
+
+```{r}
+boxplot.stats(df_madrid$Number.of.Reviews)
+boxplot(df_madrid$Number.of.Reviews)
+```
+
+```{r}
+boxplot.stats(df_madrid$Price)
+boxplot(df_madrid$Price)
+```
+
+```{r}
+boxplot.stats(df_host$Bedrooms)
+boxplot(df_host$Bedrooms)
+```
+
+```{r}
+boxplot.stats(df_host$Beds)
+boxplot(df_host$Beds)
+```
+
+```{r}
+boxplot.stats(df_host$Accomodates)
+boxplot(df_host$Accommodates)
+```
+
+```{r}
+boxplot.stats(df_host$Guests.Included)
+boxplot(df_host$Guests.Included)
+```
+
+```{r}
+boxplot.stats(df_host$Number.of.Reviews)
+boxplot(df_host$Number.of.Reviews)
+```
+
+```{r}
+boxplot.stats(df_host$Price)
+boxplot(df_host$Price)
+```
+
+```{r}
+boxplot.stats(df_super$Bedrooms)
+boxplot(df_super$Bedrooms)
+```
+
+```{r}
+boxplot.stats(df_super$Beds)
+boxplot(df_super$Beds)
+```
+
+```{r}
+boxplot.stats(df_super$Accomodates)
+boxplot(df_super$Accommodates)
+```
+
+```{r}
+boxplot.stats(df_super$Guests.Included)
+boxplot(df_super$Guests.Included)
+```
+
+```{r}
+boxplot.stats(df_super$Number.of.Reviews)
+boxplot(df_super$Number.of.Reviews)
+```
+
+```{r}
+boxplot.stats(df_super$Price)
+boxplot(df_super$Price)
+```
+
+-   df_madrid
+
+    -   Bedrooms \<=3
+
+    -   Beds \<=6
+
+    -   Accommodates \<=7
+
+    -   Guests.Included \<=3
+
+    -   Number.of.Reviews \<=87
+
+    -   Price \<=165
+
+-   df_host
+
+    -   Bedrooms \<=3
+
+    -   Beds \<= 7
+
+    -   Accommodates \<=7
+
+    -   Guests.Included \<=3
+
+    -   Number.of.Reviews \<= 74
+
+    -   Price \<=165
+
+-   df_super
+
+    -   Bedrooms \<=3
+
+    -   Beds \<=6
+
+    -   Accommodates \<=7
+
+    -   Guests.Included \<=3
+
+    -   Number.of.Reviews \<=132
+
+    -   Price \<=160
+
+De las métricas que vamos a tener en cuenta para la regresión lineal, salvo `Features`, vamos a observar para cada uno de los cuatro nuevos df los outliers para las métricas variables. Indicamos los rangos de variables que habría que emplear.
+
+```{r}
+boxplot.stats(df_amparo$Bedrooms)
+boxplot(df_amparo$Bedrooms)
+```
+
+```{r}
+boxplot.stats(df_amparo$Beds)
+boxplot(df_amparo$Beds)
+```
+
+```{r}
+boxplot.stats(df_amparo$Accommodates)
+boxplot(df_amparo$Accommodates)
+```
+
+```{r}
+boxplot.stats(df_amparo$Guests.Included)
+boxplot(df_amparo$Guests.Included)
+```
+
+```{r}
+boxplot.stats(df_amparo$Number.of.Reviews)
+boxplot(df_amparo$Number.of.Reviews)
+
+```
+
+```{r}
+boxplot.stats(df_amparo$Price)
+boxplot(df_amparo$Price)
+```
+
+```{r}
+boxplot.stats(df_alvaro$Bedrooms)
+boxplot(df_alvaro$Bedroom)
+```
+
+```{r}
+boxplot.stats(df_alvaro$Beds)
+boxplot(df_alvaro$Beds)
+```
+
+```{r}
+boxplot.stats(df_alvaro$Accommodates)
+boxplot(df_alvaro$Accommodates)
+```
+
+```{r}
+boxplot.stats(df_alvaro$Guests.Included)
+boxplot(df_alvaro$Guests.Included)
+```
+
+```{r}
+boxplot.stats(df_alvaro$Number.of.Reviews)
+boxplot(df_alvaro$Number.of.Reviews)
+
+```
+
+```{r}
+boxplot.stats(df_alvaro$Price)
+boxplot(df_alvaro$Price)
+```
+
+```{r}
+boxplot.stats(df_amparito$Bedrooms)
+boxplot(df_amparito$Bedrooms)
+```
+
+```{r}
+boxplot.stats(df_amparito$Beds)
+boxplot(df_amparito$Beds)
+```
+
+```{r}
+boxplot.stats(df_amparito$Accommodates)
+boxplot(df_amparito$Accommodates)
+```
+
+```{r}
+boxplot.stats(df_amparito$Guests.Included)
+boxplot(df_amparito$Guests.Included)
+```
+
+```{r}
+boxplot.stats(df_amparito$Number.of.Reviews)
+boxplot(df_amparito$Number.of.Reviews)
+
+```
+
+```{r}
+boxplot.stats(df_amparito$Price)
+boxplot(df_amparito$Price)
+```
+
+```{r}
+boxplot.stats(df_alvarito$Bedrooms)
+boxplot(df_alvarito$Bedrooms)
+```
+
+```{r}
+boxplot.stats(df_alvarito$Beds)
+boxplot(df_alvarito$Beds)
+```
+
+```{r}
+boxplot.stats(df_alvarito$Accommodates)
+boxplot(df_alvarito$Accommodates)
+```
+
+```{r}
+boxplot.stats(df_alvarito$Guests.Included)
+boxplot(df_alvarito$Guests.Included)
+```
+
+```{r}
+boxplot.stats(df_alvarito$Number.of.Reviews)
+boxplot(df_alvarito$Number.of.Reviews)
+
+```
+
+```{r}
+boxplot.stats(df_alvarito$Price)
+boxplot(df_alvarito$Price)
+```
+
+-   df_amparo
+
+    -   Bedrooms \<=3
+
+    -   Beds \<=4
+
+    -   Accommodates \<=8
+
+    -   Guests.Included: -----
+
+    -   Number.of.Reviews \<=121
+
+    -   Price \<=145
+
+-   df_alvaro
+
+    -   Bedrooms \<=3
+
+    -   Beds \<=4
+
+    -   Accommodates \<=5
+
+    -   Guests.Included \<=3
+
+    -   Number.of.Reviews \<=71
+
+    -   Price \<=110
+
+-   df_amparito
+
+    -   Bedrooms \<=3
+
+    -   Beds \<=5
+
+    -   Accommodates \<=7
+
+    -   Guests.Included: -----
+
+    -   Number.of.Reviews \<=121
+
+    -   Price \<=140
+
+-   df_alvarito
+
+    -   Bedrooms \<=3
+
+    -   Beds \<=4
+
+    -   Accommodates \<=8
+
+    -   Guests.Included \<=3
+
+    -   Number.of.Reviews \<=49
+
+    -   Price \<=130
+
+## Dataframes sin outliers
+
+Vamos a generar unos nuevos df en los que no se tengan en cuenta los outliers. Así tendremos preparadas las casuísticas más restrictivas por barrio en vez de por distrito.
+
+```{r}
+madrid_s <- dplyr:: filter(df_madrid, Bedrooms <=3, Beds <= 6, Guests.Included <=3, Number.of.Reviews <= 87, Price <=165, Accommodates <=7)
+madrid_s
+```
+
+```{r}
+host_s <- dplyr:: filter(df_host, Bedrooms <=3, Beds <= 6, Guests.Included <=3, Number.of.Reviews <= 74, Price <=165, Accommodates <=7)
+host_s
+```
+
+```{r}
+super_s <- dplyr:: filter(df_super, Bedrooms <=3, Beds <= 6, Guests.Included <=3, Number.of.Reviews <= 132, Price <=160, Accommodates <=7)
+super_s
+```
+
+```{r}
+amparo_s <- dplyr:: filter(df_amparo, Bedrooms <=3, Beds <= 4, Number.of.Reviews <= 121, Price <=145, Accommodates <=8)
+amparo_s
+```
+
+```{r}
+alvaro_s <- dplyr:: filter(df_alvaro, Bedrooms <=3, Beds <= 4, Guests.Included <=3, Number.of.Reviews <= 71, Price <=110, Accommodates <=5)
+alvaro_s
+```
+
+```{r}
+amparito_s <- dplyr:: filter(df_amparito, Bedrooms <=3, Beds <= 5, Number.of.Reviews <= 121, Price <=140, Accommodates <=7)
+amparito_s
+```
+
+```{r}
+alvarito_s <- dplyr:: filter(df_alvarito, Bedrooms <=3, Beds <= 4, Guests.Included <=3, Number.of.Reviews <= 49, Price <=130, Accommodates <=8)
+alvarito_s
+```
+
+Vamos a comparar el número de filas de cada df generado con su df previo.
+
+```{r}
+nrow(df_madrid)
+nrow(madrid_s)
+```
+
+```{r}
+nrow(df_host)
+nrow(host_s)
+```
+
+```{r}
+nrow(df_super)
+nrow(super_s)
+```
+
+```{r}
+nrow(df_amparo)
+nrow(amparo_s)
+```
+
+```{r}
+nrow(df_amparito)
+nrow(amparito_s)
+```
+
+```{r}
+nrow(df_alvaro)
+nrow(alvaro_s)
+```
+
+```{r}
+nrow(df_alvarito)
+nrow(alvarito_s)
+```
+
+# MODELADO: REGRESIÓN LINEAL
+
+En este apartado se nos solicita hacer un algoritmo de regresión lineal que prediga el precio de un inmueble en función de las características que elijamos.
+
+Una vez analizados los datos con R (apartado 3 del proyecto) y con Tableau (4), hemos determinado que las variables seleccionadas pueden tener una buena correlación con el precio.
+
+Recordemos cuáles eran las preguntas queríamos resolver a partir de la regresión lineal.
+
+## El problema (recordatorio)
+
+Data Women's Company recibe el encargo de un cliente. Acaba de heredar dos apartamentos de características similares ubicados en Madrid. Uno de ellos en la Calle de Amparo y el otro en la Calle de Méndez Álvaro.
+
+Desea incorporar los apartamentos a la plataforma digital Airbnb, dedicada a la oferta de alojamientos particulares y turísticos mediante la cual los anfitriones pueden publicitar y contratar el arriendo de sus propiedades con sus huéspedes, para obtener rentabilidad a sus nuevas propiedades. Nos dice que las dos propiedades están muy bien comunicadas y cerca de la Estación Madrid-Puerta de Atocha.
+
+**Solicita que le indiquemos a qué *precio base* debería publicar cada uno de los alojamientos teniendo en cuenta las características de éstos.** Ambos son *apartamentos q*ue serán rentados de manera *íntegra*. Tienen *dos habitaciones*, con *una cama matrimonial cada una*, y *un baño*. Además, los apartamentos cuentan con cocina totalmente equipada y sala de estar con *sofá-cama* donde podrían dormir hasta *dos huéspedes extra*. Nos comenta que se podrían alojar hasta *6 huéspedes*, pero sólo quiere incluir en el precio base a un huésped e incrementará el precio posteriormente en relación a la cantidad de huéspedes que reserven. Tampoco quiere que se incluya la tasa de limpieza ni el depósito por daños.
+
+También desea ***conocer cómo puede variar el precio según la cantidad de reviews*** que tenga y en qué grado es recomendable que se implique en la gestión de los alojamientos. ¿***Es rentable ser superanfitrión***?
+
+## **Condiciones para la regresión lineal múltiple**
+
+*(Fuente: https://rpubs.com/Joaquin_AR/226291)*
+
+\
+Los modelos de correlación lineal múltiple requieren de las mismas condiciones que los modelos lineales simples más otras adicionales.\
+
+### **No colinialidad o multicolinialidad**
+
+En los modelos lineales múltiples los predictores deben ser independientes, no debe de haber colinialidad entre ellos. La colinialidad ocurre cuando un predictor está linealmente relacionado con uno o varios de los otros predictores del modelo o cuando es la combinación lineal de otros predictores. Como consecuencia de la colinialidad no se puede identificar de forma precisa el efecto individual que tiene cada una de las variables colineales sobre la variable respuesta, lo que se traduce en un incremento de la varianza de los coeficientes de regresión estimados hasta el punto que resulta prácticamente imposible establecer su significancia estadística. Además, pequeños cambios en los datos provocan grandes cambios en las estimaciones de los coeficientes.
+
+Por lo tanto, debemos observar la relación entre las variables.
+
+-   Si el coeficiente de determinación *R^2^* cuadrado es alto pero ninguno de los predictores resulta significativo, hay indicios de colinialidad.
+
+-   Calcular una matriz de correlación en la que se estudia la relación lineal entre cada par de predictores. Es importante tener en cuenta que, a pesar de no obtenerse ningún coeficiente de correlación alto, no está asegurado que no exista multicolinialidad. Se puede dar el caso de tener una relación lineal casi perfecta entre tres o más variables y que las correlaciones simples entre pares de estas mismas variables no sean mayores que 0.5.
+
+-   Generar un modelo de regresión lineal simple entre cada uno de los predictores frente al resto. Si en alguno de los modelos el *coeficiente de determinación R^2^* es alto, estaría señalando a una posible colinialidad.
+
+### **Parsimonia**
+
+El mejor modelo es aquel capaz de explicar con mayor precisión la variabilidad observada en la variable respuesta empleando el menor número de predictores, por lo tanto, con menos asunciones.\
+
+## **Relación lineal entre los predictores numéricos y la variable respuesta**
+
+Cada predictor numérico tiene que estar linealmente relacionado con la variable respuesta mientras los demás predictores se mantienen constantes, de lo contrario no se puede introducir en el modelo. La forma más recomendable de comprobarlo es representando los residuos del modelo frente a cada uno de los predictores. Si la relación es lineal, los residuos se distribuyen de forma aleatoria entorno a cero.\
+
+### **Distribución normal de los residuos**
+
+Los residuos se deben distribuir de forma normal con media cero. Para comprobarlo se recurre a histogramas, a los cuantiles normales o a test de hipótesis de normalidad.
+
+### **Valores atípicos, con alto leverage o influyentes**
+
+Es importante identificar observaciones que sean atípicas o que puedan estar influenciando al modelo. La forma más fácil de detectarlas es a través de los residuos.
+
+### **Variables nominales/categóricas como predictores**
+
+Cuando se introduce una variable categórica como predictor, un nivel se considera el de referencia (normalmente codificado como 0) y el resto de niveles se comparan con él.
+
+No es recomendable ya que se dificulta el modelo. Lo que podemos hacer es hacer una selección inicial con hosts y otra con superhost.
+
+### **Validación y Test**
+
+Una vez seleccionado el mejor modelo que se puede crear con los datos disponibles, se tiene que comprobar su capacidad prediciendo nuevas observaciones que no se hayan empleado para entrenarlo, de este modo se verifica si el modelo se puede generalizar. Una estrategia comúnmente empleada es dividir aleatoriamente los datos en dos grupos (70%-30%), ajustar el modelo con el primer grupo y estimar la precisión de las predicciones con el segundo.
+
+### 
+
+## **Analizar la relación entre variables: correlación**
+
+El primer paso a la hora de establecer un modelo lineal múltiple es estudiar la relación que existe entre variables. Esta información es crítica a la hora de identificar cuáles pueden ser los mejores predictores para el modelo, qué variables presentan relaciones de tipo no lineal (por lo que no pueden ser incluidas) y para identificar colinialidad entre predictores. A modo complementario, es recomendable representar la distribución de cada variable mediante histogramas.
+
+### Coeficientes
+
+#### ***1- Coeficiente de Pearson***
+
+-   La relación que se quiere estudiar entre ambas variables es lineal (de lo contrario, el coeficiente de Pearson no la puede detectar).
+
+-   Las dos variables deben de ser **cuantitativas**.
+
+-   Normalidad: ambas variables se tienen que distribuir de **forma normal**. *Varios textos defienden su robustez cuando las variables se alejan moderadamente de la normal.*
+
+-   Homocedasticidad: La varianza y debe ser constante a lo largo de la variable x Esto se puede identificar si en el *scatterplot* los puntos mantienen la misma dispersión en las distintas zonas de la variable x.
+
+    **Características**
+
+    -   Toma valores entre \[-1, +1\], siendo +1 una correlación lineal positiva perfecta y -1 una correlación lineal negativa perfecta.
+
+    -   Es una medida independiente de las escalas en las que se midan las variables.
+
+    -   No varía si se aplican transformaciones a las variables.
+
+    -   No tiene en consideración que las variables sean dependientes o independientes.
+
+    -   El coeficiente de correlación de Pearson no equivale a la pendiente de la recta de regresión.
+
+    -   Es sensible a *outliers*, por lo que se recomienda en caso de poder justificarlos, excluirlos del análisis.
+
+    **Interpretación**\
+    Además del valor obtenido para el coeficiente, es necesario calcular su significancia. Solo si el *p-value* es significativo se puede aceptar que existe correlación y esta será de la magnitud que indique el coeficiente. Por muy cercano que sea el valor del coeficiente de correlación a +1 o -1, si no es significativo, se ha de interpretar que la correlación de ambas variables es 0 ya que el valor observado se puede deber al azar. (Ver más adelante como calcular la significancia).\
+    \
+
+#### ***2- Coeficiente de Spearman (Spearman's rho)***
+
+El coeficiente de *Spearman* es el equivalente al coeficiente de *Pearson* pero con una previa transformación de los datos a rangos. Se emplea como alternativa cuando los valores son ordinales, o bien, cuando los valores son continuos pero no satisfacen la condición de normalidad requerida por el coeficiente de Pearson y se pueden ordenar transformándolos en rangos. Al trabajar con rangos, es menos sensible que *Pearson* a valores extremos. Existe una diferencia adicional con respecto a *Pearson*. El coeficiente de *Spearman* requiere que la relación entre las variables sea monótona, es decir, que cuando una variable crece la otra también lo hace o cuando una crece la otra decrece (que la tendencia sea constante). Este concepto no es exactamente el mismo que linealidad.
+
+## **Selección de los predictores**
+
+A la hora de seleccionar los predictores que deben formar parte del modelo se pueden seguir varios métodos:
+
+1.  **Método jerárquico:** basándose en el criterio del analista, se introducen unos predictores determinados en un orden determinado.\
+
+2.  **Método de entrada forzada:** se introducen todos los predictores simultáneamente.\
+
+3.  **Método paso a paso (*stepwise*):** emplea criterios matemáticos para decidir qué predictores contribuyen significativamente al modelo y en qué orden se introducen. Dentro de este método se diferencias tres estrategias:
+
+-   Dirección *forward*: El modelo inicial no contiene ningún predictor, solo el parámetro β. A partir de este se generan todos los posibles modelos introduciendo una sola variable de entre las disponibles. Aquella variable que mejore en mayor medida el modelo se selecciona. A continuación se intenta incrementar el modelo probando a introducir una a una las variables restantes. Si introduciendo alguna de ellas mejora, también se selecciona. En el caso de que varias lo hagan, se selecciona la que incremente en mayor medida la capacidad del modelo. Este proceso se repite hasta llegar al punto en el que ninguna de las variables que quedan por incorporar mejore el modelo.
+
+-   Dirección *backward*: El modelo se inicia con todas las variables disponibles incluidas como predictores. Se prueba a eliminar una a una cada variable, si se mejora el modelo, queda excluida. Este método permite evaluar cada variable en presencia de las otras.
+
+-   Doble o mixto: Se trata de una combinación de la selección *forward* y *backward*. Se inicia igual que el *forward* pero tras cada nueva incorporación se realiza un test de extracción de predictores no útiles como en el *backward*. Presenta la ventaja de que si a medida que se añaden predictores, alguno de los ya presentes deja de contribuir al modelo, se elimina.\
+
+### **Apartamentos de Madrid**
+
+```{r}
+round(cor(x = df_madrid[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = df_madrid[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(df_madrid[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+Todos los predictores tienen una buena correlación:
+
+```{r}
+model_madrid <- lm(data=df_madrid, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Features+Number.of.Reviews)
+summary(model_madrid)
+```
+
+*Guests Included* es el menos significativo.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_madrid, direction = "both")
+```
+
+```{r}
+model_madrid_step <- lm(formula = Price ~ Bedrooms + Beds + Accommodates + Features + 
+    Number.of.Reviews, data = df_madrid)
+summary(model_madrid_step)
+
+
+```
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(lm(formula = Price ~ Bedrooms + Beds + Accommodates + Features + 
+    Number.of.Reviews, data = df_madrid))
+```
+
+Reseñar que las variables Beds y Accommodates están altamente relacionadas con Bedrooms, por lo que deberían haberse omitido.
+
+#### **Apartamentos de Madrid sin outliers**
+
+```{r}
+round(cor(x = madrid_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = madrid_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(madrid_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+Todos los predictores tienen una buena correlación:
+
+```{r}
+model_madrids <- lm(data=madrid_s, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Features+Number.of.Reviews)
+summary(model_madrids)
+```
+
+*Guests Included* es el menos significativo.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_madrids, direction = "both")
+```
+
+```{r}
+model_madrids_step <- lm(formula = Price ~ Bedrooms + Beds + Guests.Included + Accommodates + 
+    Features + Number.of.Reviews, data = madrid_s)
+summary(model_madrids_step)
+
+
+```
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(lm(formula = Price ~ Bedrooms + Beds + Guests.Included + Accommodates + 
+    Features + Number.of.Reviews, data = madrid_s))
+```
+
+### **Apartamentos de Madrid de Host**
+
+```{r}
+round(cor(x = df_host[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = df_host[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(df_host[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+Todos los predictores tienen una buena correlación:
+
+```{r}
+model_host <- lm(data=df_host, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Number.of.Reviews)
+summary(model_host)
+```
+
+*Guests Included* es el menos significativo.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_host, direction = "both")
+```
+
+```{r}
+model_host_step <- lm(formula = Price ~ Bedrooms + Beds + Guests.Included + Accommodates + 
+    Number.of.Reviews, data = df_host)
+summary(model_host_step)
+
+
+```
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(lm(formula = Price ~ Bedrooms + Beds + Guests.Included + Accommodates + 
+    Features + Number.of.Reviews, data = madrid_s))
+```
+
+#### 
+
+#### **Apartamentos de Madrid de Hosts sin outliers**
+
+```{r}
+round(cor(x = host_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = host_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(host_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+Todos los predictores tienen una buena correlación:
+
+```{r}
+model_host_s <- lm(data=host_s, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Number.of.Reviews)
+summary(model_host_s)
+```
+
+*Guests Included* es el menos significativo.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_host_s, direction = "both")
+```
+
+La fórmula de model_host_s sería igual con step. Se prueba quitando Guest Included
+
+```{r}
+model_host_s <- lm(formula = Price ~ Bedrooms + Beds + Guests.Included + Accommodates + 
+    Number.of.Reviews, data = host_s)
+
+
+```
+
+No mejora.
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(lm(formula = Price ~ Bedrooms + Beds + Guests.Included + Accommodates + 
+    Number.of.Reviews, data = host_s))
+```
+
+### **Apartamentos de Madrid de Superhosts**
+
+```{r}
+round(cor(x = df_super[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = df_super[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(df_super[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+Todos los predictores tienen una buena correlación:
+
+```{r}
+model_super <- lm(data=df_super, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Number.of.Reviews)
+summary(model_super)
+```
+
+Beds es el menos significativo.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_super, direction = "both")
+```
+
+La fórmula de model_super2 sería resultado similar pero quitando Beds.
+
+```{r}
+model_super2 <- lm(formula = Price ~ Bedrooms + Guests.Included + Accommodates + 
+    Number.of.Reviews, data = df_super)
+summary(model_super2)
+
+
+```
+
+Es similar.
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(model_super2)
+```
+
+#### **Apartamentos de Madrid de Superhosts sin outliers**
+
+```{r}
+round(cor(x = super_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = super_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(super_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+```{r}
+model_supers <- lm(data=super_s, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Number.of.Reviews)
+summary(model_supers)
+```
+
+Beds y número de reviews son los menos significativos.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_supers, direction = "both")
+```
+
+La fórmula de model_super2 sería resultado similar pero quitando Beds y Número de reviews
+
+```{r}
+model_supers2 <- lm(formula = Price ~ Bedrooms + Guests.Included + Accommodates, 
+    data = super_s)
+summary(model_supers2)
+
+
+```
+
+Es similar.
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(lm(formula = Price ~ Bedrooms + Guests.Included + Accommodates, 
+    data = super_s))
+```
+
+### **Distrito Centro: Calle de Amparo**
+
+```{r}
+round(cor(x = df_amparo[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = df_amparo[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(df_amparo[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+Todos los predictores tienen una buena correlación:
+
+```{r}
+model_amparo<- lm(data=df_amparo, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Features+Number.of.Reviews)
+summary(model_amparo)
+```
+
+*Guests Included* es el menos significativo.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_amparo, direction = "both")
+```
+
+```{r}
+model_amparo_step <- lm(formula = Price ~ Bedrooms + Beds + Guests.Included + Accommodates + 
+    Features + Number.of.Reviews, data = df_amparo)
+
+summary(model_amparo_step)
+
+
+```
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(model_amparo_step)
+
+```
+
+Reseñar que las variables Beds y Accommodates están altamente relacionadas con Bedrooms, por lo que deberían haberse omitido.
+
+#### **Distrito Centro: Calle de Amparo sin** outliers
+
+```{r}
+round(cor(x = amparo_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = amparo_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(amparo_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+```{r}
+model_amparo_s<- lm(data=amparo_s, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Features+Number.of.Reviews)
+summary(model_amparo_s)
+```
+
+*Beds* es el menos significativo.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_amparo_s, direction = "both")
+```
+
+```{r}
+model_amparo_s_step <- lm(formula = Price ~ Bedrooms + Beds + Guests.Included + Accommodates + 
+    Features + Number.of.Reviews, data = amparo_s)
+
+summary(model_amparo_s_step)
+
+
+```
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(model_amparo_s_step)
+
+```
+
+Reseñar que las variables Beds y Accommodates están altamente relacionadas con Bedrooms, por lo que deberían haberse omitido.
+
+### **Barrio Embajadores: Calle de Amparo**
+
+```{r}
+round(cor(x = df_amparito[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = df_amparito[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(df_amparito[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+Todos los predictores tienen una buena correlación:
+
+```{r}
+model_amparito<- lm(data=df_amparito, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Features+Number.of.Reviews)
+summary(model_amparito)
+```
+
+*Guests Included y Beds está asociado a Accomodates y Bedrooms* es el menos significativo.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_amparito, direction = "both")
+```
+
+step() ha eliminado la varible Guests Included
+
+```{r}
+model_amparito_step <- lm(formula = Price ~ Bedrooms + Beds + Accommodates + Features + 
+    Number.of.Reviews, data = df_amparito)
+
+summary(model_amparito_step)
+
+
+```
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(model_amparito_step)
+
+```
+
+Reseñar que las variables Beds y Accommodates están altamente relacionadas con Bedrooms, por lo que deberían haberse omitido.
+
+#### **Barrio Embajadores: Calle de Amparo sin outliers**
+
+```{r}
+round(cor(x = amparito_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = amparito_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(amparo_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+```{r}
+model_amparito_s<- lm(data=amparito_s, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Features+Number.of.Reviews)
+summary(model_amparito_s)
+```
+
+*Beds* es el menos significativo.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_amparito_s, direction = "both")
+```
+
+```{r}
+model_amparito_s_step <- lm(formula = Price ~ Bedrooms + Beds + Guests.Included + Accommodates + 
+    Features + Number.of.Reviews, data = amparito_s)
+
+
+summary(model_amparito_s_step)
+
+
+```
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(model_amparito_s_step)
+
+```
+
+Reseñar que las variables Beds y Bedrooms están altamente relacionadas co Accomodates, por lo que deberían haberse omitido.
+
+### **Distrito Arganzuela: Calle de Méndez Álvaro**
+
+```{r}
+round(cor(x = df_alvaro[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = df_alvaro[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(df_alvaro[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+Todos los predictores tienen una buena correlación:
+
+```{r}
+model_alvaro<- lm(data=df_alvaro, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Features+Number.of.Reviews)
+summary(model_alvaro)
+```
+
+*Guests Included, Beds, Features* son los menos significativos.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_alvaro, direction = "both")
+```
+
+step() elimina Beds y Features
+
+```{r}
+model_alvaro_step <- lm(formula = Price ~ Bedrooms + Guests.Included + Accommodates + 
+    Number.of.Reviews, data = df_alvaro)
+summary(model_alvaro_step)
+
+
+```
+
+No varía mucho.
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(model_alvaro_step)
+
+```
+
+Reseñar que la variable Beds están altamente relacionadas con Bedrooms, por lo que deberían haberse omitido.
+
+#### **Distrito Arganzuela: Calle de Méndez Álvaro sin outliers**
+
+```{r}
+round(cor(x = alvaro_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = alvaro_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(alvaro_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+```{r}
+model_alvaro_s<- lm(data=alvaro_s, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Features+Number.of.Reviews)
+summary(model_alvaro_s)
+```
+
+Los coeficientes son malos.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_alvaro_s, direction = "both")
+```
+
+Se han omitido Accommodates y Guests Included
+
+```{r}
+model_alvaro_s_step <- lm(formula = Price ~ Bedrooms + Beds + Guests.Included + Accommodates + 
+    Features + Number.of.Reviews, data = alvaro_s)
+
+summary(model_alvaro_s_step)
+
+
+```
+
+Bastante mala relación con otras variables.
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(model_alvaro_s_step)
+
+```
+
+Reseñar que las variables Beds y Accommodates están altamente relacionadas con Bedrooms, por lo que deberían haberse omitido.
+
+### **Barrio Palos de Moguer: Calle de Méndez Álvaro**
+
+```{r}
+round(cor(x = df_alvarito[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = df_alvarito[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(df_alvarito[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+La correlación:
+
+```{r}
+model_alvarito<-lm(data=df_alvarito, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Features+Number.of.Reviews)
+summary(model_alvarito)
+```
+
+*Features y Bedrooms tienen menor relación.*
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_alvarito, direction = "both")
+```
+
+step() ha eliminado la varible Bedrooms y Features.
+
+```{r}
+model_alvarito_step <- lm(formula = Price ~ Beds + Guests.Included + Accommodates + 
+    Number.of.Reviews, data = df_alvarito)
+
+summary(model_alvarito_step)
+
+
+```
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(model_alvarito_step)
+
+```
+
+Reseñar que las variables Beds y Accommodates están altamente relacionadas con Bedrooms, por lo que deberían haberse omitido.
+
+#### **Barrio Palos de Moguer: Calle de Méndez Álvaro sin outliers**
+
+```{r}
+round(cor(x = alvarito_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "pearson"), 3)
+```
+
+```{r}
+round(cor(x = alvarito_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], method = "spearman"), 3)
+```
+
+```{r}
+ggpairs(alvarito_s[,c("Price","Bedrooms", "Beds", "Guests.Included", "Accommodates","Features", "Number.of.Reviews")], lower = list(continuous = wrap("points", alpha = 0.3,size=0.3,color='blue')))
+```
+
+```{r}
+model_alvarito_s<- lm(data=alvarito_s, formula = Price~Bedrooms+Beds+Guests.Included+Accommodates+Features+Number.of.Reviews)
+summary(model_alvarito_s)
+```
+
+*Beds, Bedrooms, Features, Number of reviews son los* menos significativos.
+
+Vamos a obtener el modelo mediante la función `step()` con la estrategia *stepwise mixto*.
+
+```{r}
+step(object = model_alvarito_s, direction = "both")
+```
+
+No se tiene en cuenta el número de reviews ni Features.
+
+```{r}
+model_alvarito_s_step <- lm(formula = Price ~ Bedrooms + Beds + Guests.Included + Accommodates, 
+    data = alvarito_s)
+summary(model_alvarito_s_step)
+```
+
+Mejora el modelo.
+
+Es recomendable mostrar el intervalo de confianza para cada uno de los coeficientes parciales de regresión:
+
+```{r}
+confint(model_alvarito_s_step)
+```
+
+## Análisis de resultados de regresiones lineales
+
+Resolvemos las preguntas a través de los resultados que hemos obtenido a través de los logaritmos. En la memoria en contraremos el desarrollo de ésta.

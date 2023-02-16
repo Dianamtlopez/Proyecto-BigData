@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
+  <context confirmationNeeded="false" name="Default"/>
+  <parameters>
+    <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
+    <elementParameter field="TEXT" name="JOB_RUN_VM_ARGUMENTS" value="{&quot;JOB_RUN_VM_ARGUMENTS&quot;:[&quot;-Xms256M&quot;,&quot;-Xmx1024M&quot;]}" show="false"/>
+    <elementParameter field="CHECK" name="JOB_RUN_VM_ARGUMENTS_OPTION" value="true" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
+    <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_VERSION" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_KERBEROS" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_USERNAME" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_GROUP" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_USE_KEYTAB" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_KT_PRINCIPAL" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_KEY_TAB" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_END_POINT" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" value="" show="false"/>
+    <elementParameter field="TEXT" name="OOZIE_END_POINT" value="" show="false"/>
+    <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
+    <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" value="false" show="false"/>
+    <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" value="false" show="false"/>
+    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" value="false" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" value="ISO-8859-15" show="false"/>
+    <elementParameter field="TECHNICAL" name="OVERRIDE_ENCODING_IN_EXTRA:ENCODING_TYPE" value="ISO-8859-15" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" value="" show="false"/>
+    <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR_IMPLICIT_CONTEXT" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="HOST_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:Oq80M2l9ywTUoZM12if9FjkpxG4o8n8R3aHYRglp" show="false"/>
+    <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning" show="false"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" value="false" show="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false" show="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" value="&quot;D:/Users/diana/Desktop/KC_DW-ETL/workspace/.metadata&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="ISO-8859-15" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15" show="false"/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" value="tJDBCOutput" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_12" show="false"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:rSF2lpY09q6fks43AepmpFKJiqAl9zz9PjL2m+ZL" show="false"/>
+    <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true" show="false"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false" show="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" value="" show="false"/>
+    <elementParameter field="CHECK" name="HEADER_ENABLED" value="false" show="false"/>
+    <elementParameter field="TEXT" name="HEADER_LIBRARY" value="" show="false"/>
+    <elementParameter field="TEXT" name="HEADER_CODE" value="" show="false"/>
+    <elementParameter field="TEXT" name="HEADER_IMPORT" value="" show="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_FOOTERID" value="" show="false"/>
+    <elementParameter field="CHECK" name="FOOTER_ENABLED" value="false" show="false"/>
+    <elementParameter field="TEXT" name="FOOTER_LIBRARY" value="" show="false"/>
+    <elementParameter field="TEXT" name="FOOTER_CODE" value="" show="false"/>
+    <elementParameter field="TEXT" name="FOOTER_IMPORT" value="" show="false"/>
+    <routinesParameter id="_pKuIUKyLEe28zo_N6PYyvA" name="DataOperation"/>
+    <routinesParameter id="_pLgLcKyLEe28zo_N6PYyvA" name="Mathematical"/>
+    <routinesParameter id="_pLinsKyLEe28zo_N6PYyvA" name="Numeric"/>
+    <routinesParameter id="_pLlD8KyLEe28zo_N6PYyvA" name="Relational"/>
+    <routinesParameter id="_pLngMKyLEe28zo_N6PYyvA" name="StringHandling"/>
+    <routinesParameter id="_pLrKkKyLEe28zo_N6PYyvA" name="TalendDataGenerator"/>
+    <routinesParameter id="_pLuN4KyLEe28zo_N6PYyvA" name="TalendDate"/>
+    <routinesParameter id="_pLx4QKyLEe28zo_N6PYyvA" name="TalendString"/>
+    <routinesParameter id="_pL07kKyLEe28zo_N6PYyvA" name="TalendStringUtil"/>
+  </parameters>
+  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_fgX5YKzMEe278K7Az7p1LQ" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;5432&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;airbnb-listings&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;Data_Womans_Company&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;postgres&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:NIynjqffTFoIdyo0yLODIctLaPpqhOVYbBOr4pDoP2h/aQQ9NWo="/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_fgX5YKzMEe278K7Az7p1LQ - data" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;data&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;ID\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Host ID\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Host Response Rate\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Host Listings Count\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Host Total Listings Count\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Neighbourhood Cleansed\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Neighbourhood Group Cleansed\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Zipcode\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Market\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Latitude\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Longitude\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Property Type\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Room Type\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Accommodates\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Bathrooms\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Bedrooms\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Beds\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Price\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Weekly Price\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Monthly Price\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Guests Included\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Extra People\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Minimum Nights\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Maximum Nights\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Number of Reviews\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Review Scores Rating\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Review Scores Accuracy\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Review Scores Cleanliness\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Review Scores Checkin\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Review Scores Communication\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Review Scores Location\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Review Scores Value\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Cancellation Policy\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Reviews per Month\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Geolocation\&quot;, &#xA;  \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;.\&quot;Features\&quot;&#xA;FROM \&quot;Data_Womans_Company\&quot;.\&quot;data\&quot;&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="postgres_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_CURSOR" value="false"/>
+    <elementParameter field="TEXT" name="CURSOR_SIZE" value="1000" show="false"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Host_ID"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Host_Response_Rate"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Host_Listings_Count"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Host_Total_Listings_Count"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Neighbourhood_Cleansed"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Neighbourhood_Group_Cleansed"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Zipcode"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Market"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Latitude"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Longitude"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Property_Type"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Room_Type"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Accommodates"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Bathrooms"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Bedrooms"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Beds"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Price"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Weekly_Price"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Monthly_Price"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Guests_Included"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Extra_People"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Minimum_Nights"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Maximum_Nights"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Number_of_Reviews"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Rating"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Accuracy"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Cleanliness"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Checkin"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Communication"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Location"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Value"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Cancellation_Policy"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Reviews_per_Month"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Geolocation"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Features"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="&lt;b>Lectura de datos&lt;/b> &lt;br> &lt;b>__UNIQUE_NAME__&lt;/b>"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="data" name="tDBInput_1">
+      <column comment="" key="true" length="19" name="ID" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Host_ID" nullable="true" originalDbColumnName="Host ID" pattern="" precision="0" sourceType="INT8" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Host_Response_Rate" nullable="true" originalDbColumnName="Host Response Rate" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Host_Listings_Count" nullable="true" originalDbColumnName="Host Listings Count" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Host_Total_Listings_Count" nullable="true" originalDbColumnName="Host Total Listings Count" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="Neighbourhood_Cleansed" nullable="true" originalDbColumnName="Neighbourhood Cleansed" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="Neighbourhood_Group_Cleansed" nullable="true" originalDbColumnName="Neighbourhood Group Cleansed" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="Zipcode" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="Market" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Latitude" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Longitude" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="Property_Type" nullable="true" originalDbColumnName="Property Type" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="Room_Type" nullable="true" originalDbColumnName="Room Type" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Accommodates" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Bathrooms" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Bedrooms" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Beds" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Price" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Weekly_Price" nullable="true" originalDbColumnName="Weekly Price" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Monthly_Price" nullable="true" originalDbColumnName="Monthly Price" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Guests_Included" nullable="true" originalDbColumnName="Guests Included" pattern="" precision="0" sourceType="INT8" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Extra_People" nullable="true" originalDbColumnName="Extra People" pattern="" precision="0" sourceType="INT8" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Minimum_Nights" nullable="true" originalDbColumnName="Minimum Nights" pattern="" precision="0" sourceType="INT8" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Maximum_Nights" nullable="true" originalDbColumnName="Maximum Nights" pattern="" precision="0" sourceType="INT8" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Number_of_Reviews" nullable="true" originalDbColumnName="Number of Reviews" pattern="" precision="0" sourceType="INT8" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Review_Scores_Rating" nullable="true" originalDbColumnName="Review Scores Rating" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Review_Scores_Accuracy" nullable="true" originalDbColumnName="Review Scores Accuracy" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Review_Scores_Cleanliness" nullable="true" originalDbColumnName="Review Scores Cleanliness" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Review_Scores_Checkin" nullable="true" originalDbColumnName="Review Scores Checkin" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Review_Scores_Communication" nullable="true" originalDbColumnName="Review Scores Communication" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Review_Scores_Location" nullable="true" originalDbColumnName="Review Scores Location" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Review_Scores_Value" nullable="true" originalDbColumnName="Review Scores Value" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="Cancellation_Policy" nullable="true" originalDbColumnName="Cancellation Policy" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="17" name="Reviews_per_Month" nullable="true" originalDbColumnName="Reviews per Month" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="Geolocation" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="Features" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="384" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_1" show="false"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_4wP-0KyjEe28zo_N6PYyvA-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" value="0" show="false"/>
+    <elementParameter field="TEXT" name="JACCARD" value="0" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="data" name="carga_ods_airbnb">
+      <column comment="Columna que contiene la identificacion del anfitrion" key="true" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la identificacion del anfitrion"/>
+      </column>
+      <column comment="Columna que contiene el identificador de Host (anfitrión)." key="false" length="10" name="Host_ID" nullable="true" originalDbColumnName="Host ID" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el identificador de Host (anfitrión)."/>
+      </column>
+      <column comment="Columna que contiene índice de respuestas del anfitrión, o cómo de rápida es la respuesta de los anfitriones." key="false" length="17" name="Host_Response_Rate" nullable="true" originalDbColumnName="Host Response Rate" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene índice de respuestas del anfitrión, o cómo de rápida es la respuesta de los anfitriones."/>
+      </column>
+      <column comment="Columna que contiene el número de alojamientos por anfitrión." key="false" length="17" name="Host_Listings_Count" nullable="true" originalDbColumnName="Host Listings Count" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de alojamientos por anfitrión."/>
+      </column>
+      <column comment="Columna que contiene el número total de alojamientos por anfitrión." key="false" length="17" name="Host_Total_Listings_Count" nullable="true" originalDbColumnName="Host Total Listings Count" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número total de alojamientos por anfitrión."/>
+      </column>
+      <column comment="Columna que contiene el barrio donde está localizado el alojamiento." key="false" length="2147483647" name="Neighbourhood_Cleansed" nullable="true" originalDbColumnName="Neighbourhood Cleansed" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el barrio donde está localizado el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene el distrito donde se encuentra el alojamiento." key="false" length="2147483647" name="Neighbourhood_Group_Cleansed" nullable="true" originalDbColumnName="Neighbourhood Group Cleansed" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el distrito donde se encuentra el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene el código postal del alojamiento.Identifica por códogos los barrios o distritos." key="false" length="2147483647" name="Zipcode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el código postal del alojamiento.Identifica por códogos los barrios o distritos."/>
+      </column>
+      <column comment="Columna que contiene laciudad donde se encuentra el alojamiento." key="false" length="2147483647" name="Market" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene laciudad donde se encuentra el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene la latitud, proporciona la localizacion de un lugar." key="false" length="17" name="Latitude" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la latitud, proporciona la localizacion de un lugar."/>
+      </column>
+      <column comment="Columna que contiene la longitud geográfica. Proporciona la localización de un. Se mide en grados minutos y segundos." key="false" length="17" name="Longitude" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la longitud geográfica. Proporciona la localización de un. Se mide en grados minutos y segundos."/>
+      </column>
+      <column comment="Columna que contiene el tipo de propiedad (apartamento, casa, etc.)" key="false" length="2147483647" name="Property_Type" nullable="true" originalDbColumnName="Property Type" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el tipo de propiedad (apartamento, casa, etc.)"/>
+      </column>
+      <column comment="Columna que contiene el tipo de habitación (Habitación privada, habitación compartida, apatramento/casa entera, etc.)" key="false" length="2147483647" name="Room_Type" nullable="true" originalDbColumnName="Room Type" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el tipo de habitación (Habitación privada, habitación compartida, apatramento/casa entera, etc.)"/>
+      </column>
+      <column comment="Columna que contiene el número de personas que la propiedad puede acomodar (aforo)." key="false" length="10" name="Accommodates" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de personas que la propiedad puede acomodar (aforo)."/>
+      </column>
+      <column comment="Columna que contiene el número de baños del alojamiento." key="false" length="17" name="Bathrooms" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de baños del alojamiento."/>
+      </column>
+      <column comment="Columna que contiene el número de dormitorios del alojamientos." key="false" length="17" name="Bedrooms" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de dormitorios del alojamientos."/>
+      </column>
+      <column comment="Columna que contiene el número de camas en el alojamientos. Puede ser cualquier tipo de cama." key="false" length="17" name="beds" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de camas en el alojamientos. Puede ser cualquier tipo de cama."/>
+      </column>
+      <column comment="Columna que contiene el precio por noche." key="false" length="17" name="Price" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el precio por noche."/>
+      </column>
+      <column comment="Columna que contiene el precio por semana." key="false" length="17" name="Weekly_Price" nullable="true" originalDbColumnName="Weekly Price" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el precio por semana."/>
+      </column>
+      <column comment="Columna que contiene el precio por mes. Precio por semana." key="false" length="17" name="Monthly_Price" nullable="true" originalDbColumnName="Monthly Price" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el precio por mes. Precio por semana."/>
+      </column>
+      <column comment="Columna que contiene el número de huéspedes que pueden quedarse en el alojamiento incluidos en el precio." key="false" length="10" name="Guests_Included" nullable="true" originalDbColumnName="Guests Included" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de huéspedes que pueden quedarse en el alojamiento incluidos en el precio."/>
+      </column>
+      <column comment="Columna que contiene el precio que los huéspedes tendrán que pagar si quieren invitar personas extra." key="false" length="10" name="Extra_People" nullable="true" originalDbColumnName="Extra People" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el precio que los huéspedes tendrán que pagar si quieren invitar personas extra."/>
+      </column>
+      <column comment="Columna que contiene el mínimo de noches que hay que reservar para poder alquilar el alojamiento." key="false" length="10" name="Minimum_Nights" nullable="true" originalDbColumnName="Minimum Nights" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el mínimo de noches que hay que reservar para poder alquilar el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene el número máximo de noches que pueden pernoctar los huéspedes." key="false" length="10" name="Maximum_Nights" nullable="true" originalDbColumnName="Maximum Nights" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número máximo de noches que pueden pernoctar los huéspedes."/>
+      </column>
+      <column comment="Columna que contiene el número de reseñas que tiene el alojamiento." key="false" length="10" name="Number_of_Reviews" nullable="true" originalDbColumnName="Number of Reviews" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de reseñas que tiene el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene la puntuación de las reseñas dejadas por los huéspedes." key="false" length="17" name="Review_Scores_Rating" nullable="true" originalDbColumnName="Review Scores Rating" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación de las reseñas dejadas por los huéspedes."/>
+      </column>
+      <column comment="Columna que contiene la precisión (exactitud) de la descripción del inmueble escrita por los anfitriones." key="false" length="17" name="Review_Scores_Accuracy" nullable="true" originalDbColumnName="Review Scores Accuracy" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la precisión (exactitud) de la descripción del inmueble escrita por los anfitriones."/>
+      </column>
+      <column comment="Columna que contieene la puntuación de la limpieza de los alojamientos." key="false" length="17" name="Review_Scores_Cleanliness" nullable="true" originalDbColumnName="Review Scores Cleanliness" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contieene la puntuación de la limpieza de los alojamientos."/>
+      </column>
+      <column comment="Columna que contiene la puntuación del check-in del alojamiento. Puntuación de 1 a 10." key="false" length="17" name="Review_Scores_Checkin" nullable="true" originalDbColumnName="Review Scores Checkin" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación del check-in del alojamiento. Puntuación de 1 a 10."/>
+      </column>
+      <column comment="Columna que contiene la puntuación que han dejado los huéspedes sobre la comunicación con el anfitrión o anfitriones." key="false" length="17" name="Review_Scores_Communication" nullable="true" originalDbColumnName="Review Scores Communication" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación que han dejado los huéspedes sobre la comunicación con el anfitrión o anfitriones."/>
+      </column>
+      <column comment="Columna que contiene la puntuación que han dejado los huéspedes sobre la ubicación del inmueble." key="false" length="17" name="Review_Scores_Location" nullable="true" originalDbColumnName="Review Scores Location" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación que han dejado los huéspedes sobre la ubicación del inmueble."/>
+      </column>
+      <column comment="Columna que contiene la puntuación del valor por el precio pagado por e huésped. Los huéspedes valoran si merece la pena quedarse en el inmueble o no." key="false" length="17" name="Review_Scores_Value" nullable="true" originalDbColumnName="Review Scores Value" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación del valor por el precio pagado por e huésped. Los huéspedes valoran si merece la pena quedarse en el inmueble o no."/>
+      </column>
+      <column comment="Columna que contiene la política de cancelación impuesta por el anfitrion (estricta, moderada, etc.)." key="false" length="2147483647" name="Cancellation_Policy" nullable="true" originalDbColumnName="Cancellation Policy" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la política de cancelación impuesta por el anfitrion (estricta, moderada, etc.)."/>
+      </column>
+      <column comment="Columna que contiene el número de reseñas de un alojamiento por mes." key="false" length="17" name="Reviews_per_Month" nullable="true" originalDbColumnName="Reviews per Month" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de reseñas de un alojamiento por mes."/>
+      </column>
+      <column comment="Columna que contiene la geolocalización, las coordenadas de la ubicación del inmueble." key="false" length="2147483647" name="Geolocation" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la geolocalización, las coordenadas de la ubicación del inmueble."/>
+      </column>
+      <column comment="Columna que contiene información sobre el anfitrión, si el anfitrion es superhost o host normal." key="false" length="2147483647" name="Features" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene información sobre el anfitrión, si el anfitrion es superhost o host normal."/>
+      </column>
+      <additionalProperties key="Comment" value="Tabla asignada por el departamento de Data, la cual contiene todos los datos necesarios para desarrollar el ejercicio del ciclo de vida del Dato, y manejo de ETL"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties/>
+      <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
+      <outputTables sizeState="INTERMEDIATE" name="carga_ods_airbnb">
+        <mapperTableEntries name="ID" expression="row1.ID  " type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Host_ID" expression="row1.Host_ID  " type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Host_Response_Rate" expression="row1.Host_Response_Rate  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Host_Listings_Count" expression="row1.Host_Listings_Count  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Host_Total_Listings_Count" expression="row1.Host_Total_Listings_Count  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Neighbourhood_Cleansed" expression="row1.Neighbourhood_Cleansed  " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Neighbourhood_Group_Cleansed" expression="row1.Neighbourhood_Group_Cleansed  " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Zipcode" expression="row1.Zipcode  " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Market" expression="row1.Market  " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Latitude" expression="row1.Latitude  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Longitude" expression="row1.Longitude  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Property_Type" expression="row1.Property_Type  " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Room_Type" expression="row1.Room_Type  " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Accommodates" expression="row1.Accommodates  " type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Bathrooms" expression="row1.Bathrooms  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Bedrooms" expression="row1.Bedrooms  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="beds" expression="row1.Beds  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Price" expression="row1.Price  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Weekly_Price" expression="row1.Weekly_Price  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Monthly_Price" expression="row1.Monthly_Price  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Guests_Included" expression="row1.Guests_Included  " type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Extra_People" expression="row1.Extra_People  " type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Minimum_Nights" expression="row1.Minimum_Nights  " type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Maximum_Nights" expression="row1.Maximum_Nights  " type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Number_of_Reviews" expression="row1.Number_of_Reviews  " type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Rating" expression="row1.Review_Scores_Rating  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Accuracy" expression="row1.Review_Scores_Accuracy  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Cleanliness" expression="row1.Review_Scores_Cleanliness  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Checkin" expression="row1.Review_Scores_Checkin  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Communication" expression="row1.Review_Scores_Communication  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Location" expression="row1.Review_Scores_Location  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Value" expression="row1.Review_Scores_Value  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Cancellation_Policy" expression="row1.Cancellation_Policy  " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Reviews_per_Month" expression="row1.Reviews_per_Month  " type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Geolocation" expression="row1.Geolocation  " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Features" expression="row1.Features  " type="id_String" nullable="true"/>
+      </outputTables>
+      <inputTables sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="ID" type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Host_ID" type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Host_Response_Rate" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Host_Listings_Count" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Host_Total_Listings_Count" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Neighbourhood_Cleansed" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Neighbourhood_Group_Cleansed" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Zipcode" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Market" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Latitude" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Longitude" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Property_Type" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Room_Type" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Accommodates" type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Bathrooms" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Bedrooms" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Beds" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Price" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Weekly_Price" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Monthly_Price" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Guests_Included" type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Extra_People" type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Minimum_Nights" type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Maximum_Nights" type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Number_of_Reviews" type="id_Long" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Rating" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Accuracy" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Cleanliness" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Checkin" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Communication" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Location" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Review_Scores_Value" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Cancellation_Policy" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Reviews_per_Month" type="id_Double" nullable="true"/>
+        <mapperTableEntries name="Geolocation" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Features" type="id_String" nullable="true"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBOutput_1" show="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_GRHsYKywEe28zo_N6PYyvA" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;5432&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;ods_airbnb-listings&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;Data_Womans_Company&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;postgres&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:8Pm8CStxFusRXl8HvQSj1F/uDXx4uUZ+1gx/EujM/wKk1mF0PRI="/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;data&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="UPDATE_OR_INSERT"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="_GRHsYKywEe28zo_N6PYyvA - data" show="false"/>
+    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" value="false" show="false"/>
+    <elementParameter field="CHECK" name="SPATIAL_INDEX" value="false" show="false"/>
+    <elementParameter field="CHECK" name="GEOMETRY_COLUMNS" value="false" show="false"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="postgres_id" show="false"/>
+    <elementParameter field="CHECK" name="USE_ALTERNATE_SCHEMA" value="false" show="false"/>
+    <elementParameter field="TEXT" name="ALTERNATE_SCHEMA" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="SAVE_POINT" value="false" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Host_ID"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Host_Response_Rate"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Host_Listings_Count"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Host_Total_Listings_Count"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Neighbourhood_Cleansed"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Neighbourhood_Group_Cleansed"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Zipcode"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Market"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Latitude"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Longitude"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Property_Type"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Room_Type"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Accommodates"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Bathrooms"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Bedrooms"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="beds"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Price"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Weekly_Price"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Monthly_Price"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Guests_Included"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Extra_People"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Minimum_Nights"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Maximum_Nights"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Number_of_Reviews"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Rating"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Accuracy"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Cleanliness"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Checkin"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Communication"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Location"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Review_Scores_Value"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Cancellation_Policy"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Reviews_per_Month"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Geolocation"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Features"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
+    <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="false"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true" show="false"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value=" &lt;b>datos ods&lt;/b>&lt;br> &lt;b>__UNIQUE_NAME__&lt;/b>"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="data" name="tDBOutput_1">
+      <column comment="Columna que contiene la identificacion del anfitrion" key="true" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la identificacion del anfitrion"/>
+      </column>
+      <column comment="Columna que contiene el identificador de Host (anfitrión)." key="false" length="10" name="Host_ID" nullable="true" originalDbColumnName="Host ID" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el identificador de Host (anfitrión)."/>
+      </column>
+      <column comment="Columna que contiene índice de respuestas del anfitrión, o cómo de rápida es la respuesta de los anfitriones." key="false" length="17" name="Host_Response_Rate" nullable="true" originalDbColumnName="Host Response Rate" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene índice de respuestas del anfitrión, o cómo de rápida es la respuesta de los anfitriones."/>
+      </column>
+      <column comment="Columna que contiene el número de alojamientos por anfitrión." key="false" length="17" name="Host_Listings_Count" nullable="true" originalDbColumnName="Host Listings Count" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de alojamientos por anfitrión."/>
+      </column>
+      <column comment="Columna que contiene el número total de alojamientos por anfitrión." key="false" length="17" name="Host_Total_Listings_Count" nullable="true" originalDbColumnName="Host Total Listings Count" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número total de alojamientos por anfitrión."/>
+      </column>
+      <column comment="Columna que contiene el barrio donde está localizado el alojamiento." key="false" length="2147483647" name="Neighbourhood_Cleansed" nullable="true" originalDbColumnName="Neighbourhood Cleansed" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el barrio donde está localizado el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene el distrito donde se encuentra el alojamiento." key="false" length="2147483647" name="Neighbourhood_Group_Cleansed" nullable="true" originalDbColumnName="Neighbourhood Group Cleansed" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el distrito donde se encuentra el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene el código postal del alojamiento.Identifica por códogos los barrios o distritos." key="false" length="2147483647" name="Zipcode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el código postal del alojamiento.Identifica por códogos los barrios o distritos."/>
+      </column>
+      <column comment="Columna que contiene laciudad donde se encuentra el alojamiento." key="false" length="2147483647" name="Market" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene laciudad donde se encuentra el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene la latitud, proporciona la localizacion de un lugar." key="false" length="17" name="Latitude" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la latitud, proporciona la localizacion de un lugar."/>
+      </column>
+      <column comment="Columna que contiene la longitud geográfica. Proporciona la localización de un. Se mide en grados minutos y segundos." key="false" length="17" name="Longitude" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la longitud geográfica. Proporciona la localización de un. Se mide en grados minutos y segundos."/>
+      </column>
+      <column comment="Columna que contiene el tipo de propiedad (apartamento, casa, etc.)" key="false" length="2147483647" name="Property_Type" nullable="true" originalDbColumnName="Property Type" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el tipo de propiedad (apartamento, casa, etc.)"/>
+      </column>
+      <column comment="Columna que contiene el tipo de habitación (Habitación privada, habitación compartida, apatramento/casa entera, etc.)" key="false" length="2147483647" name="Room_Type" nullable="true" originalDbColumnName="Room Type" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el tipo de habitación (Habitación privada, habitación compartida, apatramento/casa entera, etc.)"/>
+      </column>
+      <column comment="Columna que contiene el número de personas que la propiedad puede acomodar (aforo)." key="false" length="10" name="Accommodates" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de personas que la propiedad puede acomodar (aforo)."/>
+      </column>
+      <column comment="Columna que contiene el número de baños del alojamiento." key="false" length="17" name="Bathrooms" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de baños del alojamiento."/>
+      </column>
+      <column comment="Columna que contiene el número de dormitorios del alojamientos." key="false" length="17" name="Bedrooms" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de dormitorios del alojamientos."/>
+      </column>
+      <column comment="Columna que contiene el número de camas en el alojamientos. Puede ser cualquier tipo de cama." key="false" length="17" name="beds" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de camas en el alojamientos. Puede ser cualquier tipo de cama."/>
+      </column>
+      <column comment="Columna que contiene el precio por noche." key="false" length="17" name="Price" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el precio por noche."/>
+      </column>
+      <column comment="Columna que contiene el precio por semana." key="false" length="17" name="Weekly_Price" nullable="true" originalDbColumnName="Weekly Price" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el precio por semana."/>
+      </column>
+      <column comment="Columna que contiene el precio por mes. Precio por semana." key="false" length="17" name="Monthly_Price" nullable="true" originalDbColumnName="Monthly Price" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el precio por mes. Precio por semana."/>
+      </column>
+      <column comment="Columna que contiene el número de huéspedes que pueden quedarse en el alojamiento incluidos en el precio." key="false" length="10" name="Guests_Included" nullable="true" originalDbColumnName="Guests Included" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de huéspedes que pueden quedarse en el alojamiento incluidos en el precio."/>
+      </column>
+      <column comment="Columna que contiene el precio que los huéspedes tendrán que pagar si quieren invitar personas extra." key="false" length="10" name="Extra_People" nullable="true" originalDbColumnName="Extra People" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el precio que los huéspedes tendrán que pagar si quieren invitar personas extra."/>
+      </column>
+      <column comment="Columna que contiene el mínimo de noches que hay que reservar para poder alquilar el alojamiento." key="false" length="10" name="Minimum_Nights" nullable="true" originalDbColumnName="Minimum Nights" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el mínimo de noches que hay que reservar para poder alquilar el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene el número máximo de noches que pueden pernoctar los huéspedes." key="false" length="10" name="Maximum_Nights" nullable="true" originalDbColumnName="Maximum Nights" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número máximo de noches que pueden pernoctar los huéspedes."/>
+      </column>
+      <column comment="Columna que contiene el número de reseñas que tiene el alojamiento." key="false" length="10" name="Number_of_Reviews" nullable="true" originalDbColumnName="Number of Reviews" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de reseñas que tiene el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene la puntuación de las reseñas dejadas por los huéspedes." key="false" length="17" name="Review_Scores_Rating" nullable="true" originalDbColumnName="Review Scores Rating" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación de las reseñas dejadas por los huéspedes."/>
+      </column>
+      <column comment="Columna que contiene la precisión (exactitud) de la descripción del inmueble escrita por los anfitriones." key="false" length="17" name="Review_Scores_Accuracy" nullable="true" originalDbColumnName="Review Scores Accuracy" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la precisión (exactitud) de la descripción del inmueble escrita por los anfitriones."/>
+      </column>
+      <column comment="Columna que contieene la puntuación de la limpieza de los alojamientos." key="false" length="17" name="Review_Scores_Cleanliness" nullable="true" originalDbColumnName="Review Scores Cleanliness" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contieene la puntuación de la limpieza de los alojamientos."/>
+      </column>
+      <column comment="Columna que contiene la puntuación del check-in del alojamiento. Puntuación de 1 a 10." key="false" length="17" name="Review_Scores_Checkin" nullable="true" originalDbColumnName="Review Scores Checkin" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación del check-in del alojamiento. Puntuación de 1 a 10."/>
+      </column>
+      <column comment="Columna que contiene la puntuación que han dejado los huéspedes sobre la comunicación con el anfitrión o anfitriones." key="false" length="17" name="Review_Scores_Communication" nullable="true" originalDbColumnName="Review Scores Communication" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación que han dejado los huéspedes sobre la comunicación con el anfitrión o anfitriones."/>
+      </column>
+      <column comment="Columna que contiene la puntuación que han dejado los huéspedes sobre la ubicación del inmueble." key="false" length="17" name="Review_Scores_Location" nullable="true" originalDbColumnName="Review Scores Location" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación que han dejado los huéspedes sobre la ubicación del inmueble."/>
+      </column>
+      <column comment="Columna que contiene la puntuación del valor por el precio pagado por e huésped. Los huéspedes valoran si merece la pena quedarse en el inmueble o no." key="false" length="17" name="Review_Scores_Value" nullable="true" originalDbColumnName="Review Scores Value" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación del valor por el precio pagado por e huésped. Los huéspedes valoran si merece la pena quedarse en el inmueble o no."/>
+      </column>
+      <column comment="Columna que contiene la política de cancelación impuesta por el anfitrion (estricta, moderada, etc.)." key="false" length="2147483647" name="Cancellation_Policy" nullable="true" originalDbColumnName="Cancellation Policy" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la política de cancelación impuesta por el anfitrion (estricta, moderada, etc.)."/>
+      </column>
+      <column comment="Columna que contiene el número de reseñas de un alojamiento por mes." key="false" length="17" name="Reviews_per_Month" nullable="true" originalDbColumnName="Reviews per Month" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de reseñas de un alojamiento por mes."/>
+      </column>
+      <column comment="Columna que contiene la geolocalización, las coordenadas de la ubicación del inmueble." key="false" length="2147483647" name="Geolocation" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la geolocalización, las coordenadas de la ubicación del inmueble."/>
+      </column>
+      <column comment="Columna que contiene información sobre el anfitrión, si el anfitrion es superhost o host normal." key="false" length="2147483647" name="Features" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene información sobre el anfitrión, si el anfitrion es superhost o host normal."/>
+      </column>
+      <additionalProperties key="Comment" value="Tabla asignada por el departamento de Data, la cual contiene todos los datos necesarios para desarrollar el ejercicio del ciclo de vida del Dato, y manejo de ETL"/>
+    </metadata>
+    <metadata connector="REJECT" label="data" name="REJECT">
+      <column comment="Columna que contiene la identificacion del anfitrion" key="true" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la identificacion del anfitrion"/>
+      </column>
+      <column comment="Columna que contiene el identificador de Host (anfitrión)." key="false" length="10" name="Host_ID" nullable="true" originalDbColumnName="Host ID" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el identificador de Host (anfitrión)."/>
+      </column>
+      <column comment="Columna que contiene índice de respuestas del anfitrión, o cómo de rápida es la respuesta de los anfitriones." key="false" length="17" name="Host_Response_Rate" nullable="true" originalDbColumnName="Host Response Rate" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene índice de respuestas del anfitrión, o cómo de rápida es la respuesta de los anfitriones."/>
+      </column>
+      <column comment="Columna que contiene el número de alojamientos por anfitrión." key="false" length="17" name="Host_Listings_Count" nullable="true" originalDbColumnName="Host Listings Count" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de alojamientos por anfitrión."/>
+      </column>
+      <column comment="Columna que contiene el número total de alojamientos por anfitrión." key="false" length="17" name="Host_Total_Listings_Count" nullable="true" originalDbColumnName="Host Total Listings Count" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número total de alojamientos por anfitrión."/>
+      </column>
+      <column comment="Columna que contiene el barrio donde está localizado el alojamiento." key="false" length="2147483647" name="Neighbourhood_Cleansed" nullable="true" originalDbColumnName="Neighbourhood Cleansed" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el barrio donde está localizado el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene el distrito donde se encuentra el alojamiento." key="false" length="2147483647" name="Neighbourhood_Group_Cleansed" nullable="true" originalDbColumnName="Neighbourhood Group Cleansed" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el distrito donde se encuentra el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene el código postal del alojamiento.Identifica por códogos los barrios o distritos." key="false" length="2147483647" name="Zipcode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el código postal del alojamiento.Identifica por códogos los barrios o distritos."/>
+      </column>
+      <column comment="Columna que contiene laciudad donde se encuentra el alojamiento." key="false" length="2147483647" name="Market" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene laciudad donde se encuentra el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene la latitud, proporciona la localizacion de un lugar." key="false" length="17" name="Latitude" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la latitud, proporciona la localizacion de un lugar."/>
+      </column>
+      <column comment="Columna que contiene la longitud geográfica. Proporciona la localización de un. Se mide en grados minutos y segundos." key="false" length="17" name="Longitude" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la longitud geográfica. Proporciona la localización de un. Se mide en grados minutos y segundos."/>
+      </column>
+      <column comment="Columna que contiene el tipo de propiedad (apartamento, casa, etc.)" key="false" length="2147483647" name="Property_Type" nullable="true" originalDbColumnName="Property Type" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el tipo de propiedad (apartamento, casa, etc.)"/>
+      </column>
+      <column comment="Columna que contiene el tipo de habitación (Habitación privada, habitación compartida, apatramento/casa entera, etc.)" key="false" length="2147483647" name="Room_Type" nullable="true" originalDbColumnName="Room Type" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el tipo de habitación (Habitación privada, habitación compartida, apatramento/casa entera, etc.)"/>
+      </column>
+      <column comment="Columna que contiene el número de personas que la propiedad puede acomodar (aforo)." key="false" length="10" name="Accommodates" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de personas que la propiedad puede acomodar (aforo)."/>
+      </column>
+      <column comment="Columna que contiene el número de baños del alojamiento." key="false" length="17" name="Bathrooms" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de baños del alojamiento."/>
+      </column>
+      <column comment="Columna que contiene el número de dormitorios del alojamientos." key="false" length="17" name="Bedrooms" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de dormitorios del alojamientos."/>
+      </column>
+      <column comment="Columna que contiene el número de camas en el alojamientos. Puede ser cualquier tipo de cama." key="false" length="17" name="beds" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de camas en el alojamientos. Puede ser cualquier tipo de cama."/>
+      </column>
+      <column comment="Columna que contiene el precio por noche." key="false" length="17" name="Price" nullable="true" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el precio por noche."/>
+      </column>
+      <column comment="Columna que contiene el precio por semana." key="false" length="17" name="Weekly_Price" nullable="true" originalDbColumnName="Weekly Price" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el precio por semana."/>
+      </column>
+      <column comment="Columna que contiene el precio por mes. Precio por semana." key="false" length="17" name="Monthly_Price" nullable="true" originalDbColumnName="Monthly Price" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el precio por mes. Precio por semana."/>
+      </column>
+      <column comment="Columna que contiene el número de huéspedes que pueden quedarse en el alojamiento incluidos en el precio." key="false" length="10" name="Guests_Included" nullable="true" originalDbColumnName="Guests Included" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de huéspedes que pueden quedarse en el alojamiento incluidos en el precio."/>
+      </column>
+      <column comment="Columna que contiene el precio que los huéspedes tendrán que pagar si quieren invitar personas extra." key="false" length="10" name="Extra_People" nullable="true" originalDbColumnName="Extra People" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el precio que los huéspedes tendrán que pagar si quieren invitar personas extra."/>
+      </column>
+      <column comment="Columna que contiene el mínimo de noches que hay que reservar para poder alquilar el alojamiento." key="false" length="10" name="Minimum_Nights" nullable="true" originalDbColumnName="Minimum Nights" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el mínimo de noches que hay que reservar para poder alquilar el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene el número máximo de noches que pueden pernoctar los huéspedes." key="false" length="10" name="Maximum_Nights" nullable="true" originalDbColumnName="Maximum Nights" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número máximo de noches que pueden pernoctar los huéspedes."/>
+      </column>
+      <column comment="Columna que contiene el número de reseñas que tiene el alojamiento." key="false" length="10" name="Number_of_Reviews" nullable="true" originalDbColumnName="Number of Reviews" pattern="" precision="0" sourceType="INT4" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de reseñas que tiene el alojamiento."/>
+      </column>
+      <column comment="Columna que contiene la puntuación de las reseñas dejadas por los huéspedes." key="false" length="17" name="Review_Scores_Rating" nullable="true" originalDbColumnName="Review Scores Rating" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación de las reseñas dejadas por los huéspedes."/>
+      </column>
+      <column comment="Columna que contiene la precisión (exactitud) de la descripción del inmueble escrita por los anfitriones." key="false" length="17" name="Review_Scores_Accuracy" nullable="true" originalDbColumnName="Review Scores Accuracy" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la precisión (exactitud) de la descripción del inmueble escrita por los anfitriones."/>
+      </column>
+      <column comment="Columna que contieene la puntuación de la limpieza de los alojamientos." key="false" length="17" name="Review_Scores_Cleanliness" nullable="true" originalDbColumnName="Review Scores Cleanliness" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contieene la puntuación de la limpieza de los alojamientos."/>
+      </column>
+      <column comment="Columna que contiene la puntuación del check-in del alojamiento. Puntuación de 1 a 10." key="false" length="17" name="Review_Scores_Checkin" nullable="true" originalDbColumnName="Review Scores Checkin" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación del check-in del alojamiento. Puntuación de 1 a 10."/>
+      </column>
+      <column comment="Columna que contiene la puntuación que han dejado los huéspedes sobre la comunicación con el anfitrión o anfitriones." key="false" length="17" name="Review_Scores_Communication" nullable="true" originalDbColumnName="Review Scores Communication" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación que han dejado los huéspedes sobre la comunicación con el anfitrión o anfitriones."/>
+      </column>
+      <column comment="Columna que contiene la puntuación que han dejado los huéspedes sobre la ubicación del inmueble." key="false" length="17" name="Review_Scores_Location" nullable="true" originalDbColumnName="Review Scores Location" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación que han dejado los huéspedes sobre la ubicación del inmueble."/>
+      </column>
+      <column comment="Columna que contiene la puntuación del valor por el precio pagado por e huésped. Los huéspedes valoran si merece la pena quedarse en el inmueble o no." key="false" length="17" name="Review_Scores_Value" nullable="true" originalDbColumnName="Review Scores Value" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la puntuación del valor por el precio pagado por e huésped. Los huéspedes valoran si merece la pena quedarse en el inmueble o no."/>
+      </column>
+      <column comment="Columna que contiene la política de cancelación impuesta por el anfitrion (estricta, moderada, etc.)." key="false" length="2147483647" name="Cancellation_Policy" nullable="true" originalDbColumnName="Cancellation Policy" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la política de cancelación impuesta por el anfitrion (estricta, moderada, etc.)."/>
+      </column>
+      <column comment="Columna que contiene el número de reseñas de un alojamiento por mes." key="false" length="17" name="Reviews_per_Month" nullable="true" originalDbColumnName="Reviews per Month" pattern="" precision="17" sourceType="FLOAT8" type="id_Double" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene el número de reseñas de un alojamiento por mes."/>
+      </column>
+      <column comment="Columna que contiene la geolocalización, las coordenadas de la ubicación del inmueble." key="false" length="2147483647" name="Geolocation" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene la geolocalización, las coordenadas de la ubicación del inmueble."/>
+      </column>
+      <column comment="Columna que contiene información sobre el anfitrión, si el anfitrion es superhost o host normal." key="false" length="2147483647" name="Features" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value="Columna que contiene información sobre el anfitrión, si el anfitrion es superhost o host normal."/>
+      </column>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <additionalProperties key="Comment" value="Tabla asignada por el departamento de Data, la cual contiene todos los datos necesarios para desarrollar el ejercicio del ciclo de vida del Dato, y manejo de ETL"/>
+    </metadata>
+  </node>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="carga_ods_airbnb" lineStyle="0" metaname="carga_ods_airbnb" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="carga_ods_airbnb" show="false"/>
+  </connection>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+</talendfile:ProcessType>

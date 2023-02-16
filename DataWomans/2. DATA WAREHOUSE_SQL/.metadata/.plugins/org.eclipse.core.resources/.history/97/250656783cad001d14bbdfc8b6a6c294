@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_pNBOYKyLEe28zo_N6PYyvA" id="_pNAAQKyLEe28zo_N6PYyvA" label="DropSourceTable" version="0.1" item="_pNBOYqyLEe28zo_N6PYyvA">
+    <author href="../../../talend.project#_jkMksayLEe28zo_N6PYyvA"/>
+    <additionalProperties xmi:id="_pNB1cKyLEe28zo_N6PYyvA" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_pNB1cayLEe28zo_N6PYyvA" key="created_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_pNB1cqyLEe28zo_N6PYyvA" key="created_date" value="2023-02-14T18:18:48.391+0100"/>
+    <additionalProperties xmi:id="_pNB1c6yLEe28zo_N6PYyvA" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_pNB1dKyLEe28zo_N6PYyvA" key="modified_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_pNB1dayLEe28zo_N6PYyvA" key="modified_date" value="2023-02-14T18:18:48.391+0100"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_pNBOYayLEe28zo_N6PYyvA" path="Generic/system"/>
+  <TalendProperties:SQLPatternItem xmi:id="_pNBOYqyLEe28zo_N6PYyvA" property="_pNBOYKyLEe28zo_N6PYyvA" state="_pNBOYayLEe28zo_N6PYyvA" system="true" eltName="Generic">
+    <content href="DropSourceTable_0.1.item#/"/>
+  </TalendProperties:SQLPatternItem>
+</xmi:XMI>

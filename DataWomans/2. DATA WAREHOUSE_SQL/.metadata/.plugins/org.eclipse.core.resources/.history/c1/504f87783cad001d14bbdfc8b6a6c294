@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_pONhMKyLEe28zo_N6PYyvA" id="_pOM6IKyLEe28zo_N6PYyvA" label="NetezzaFilterColumns" version="0.1" item="_pONhMqyLEe28zo_N6PYyvA">
+    <author href="../../../talend.project#_jkMksayLEe28zo_N6PYyvA"/>
+    <additionalProperties xmi:id="_pOOIQKyLEe28zo_N6PYyvA" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_pOOIQayLEe28zo_N6PYyvA" key="created_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_pOOIQqyLEe28zo_N6PYyvA" key="created_date" value="2023-02-14T18:18:48.516+0100"/>
+    <additionalProperties xmi:id="_pOOIQ6yLEe28zo_N6PYyvA" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_pOOIRKyLEe28zo_N6PYyvA" key="modified_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_pOOIRayLEe28zo_N6PYyvA" key="modified_date" value="2023-02-14T18:18:48.516+0100"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_pONhMayLEe28zo_N6PYyvA" path="Netezza/system"/>
+  <TalendProperties:SQLPatternItem xmi:id="_pONhMqyLEe28zo_N6PYyvA" property="_pONhMKyLEe28zo_N6PYyvA" state="_pONhMayLEe28zo_N6PYyvA" system="true" eltName="Netezza">
+    <content href="NetezzaFilterColumns_0.1.item#/"/>
+  </TalendProperties:SQLPatternItem>
+</xmi:XMI>

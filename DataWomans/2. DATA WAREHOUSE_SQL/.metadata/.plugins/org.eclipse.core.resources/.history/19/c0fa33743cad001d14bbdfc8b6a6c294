@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <TalendMetadata:DatabaseConnection xmi:id="_U_Q70KywEe28zo_N6PYyvA" name="cnx_ods_airbnb-listings" id="_GRHsYKywEe28zo_N6PYyvA" label="cnx_ods_airbnb-listings" dataPackage="_U_3_0KywEe28zo_N6PYyvA" DatabaseType="PostgreSQL" DriverClass="org.postgresql.Driver" URL="jdbc:postgresql://localhost:5432/ods_airbnb-listings?" dbVersionString="V9_X" Port="5432" Username="postgres" Password="enc:system.encryption.key.v1:o24AhqTqTNxo1a7+tknxw0a6ier85FwTG0mvtWV1DBM9kQdV" ServerName="localhost" DatasourceName="" FileFieldName="" SID="ods_airbnb-listings" SqlSynthax="" StringQuote="" NullChar="" DbmsId="postgres_id" ProductId="POSTGRESQL" AdditionalParams="" StandardSQL="true" SQLMode="false" UiSchema="Data_Womans_Company">
+    <taggedValue xmi:id="_U_Q70aywEe28zo_N6PYyvA" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_U_dJEKywEe28zo_N6PYyvA" tag="package filter" value=""/>
+    <taggedValue xmi:id="_U_dJEaywEe28zo_N6PYyvA" tag="Status" value=""/>
+    <taggedValue xmi:id="_U_dJEqywEe28zo_N6PYyvA" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_U_dJE6ywEe28zo_N6PYyvA" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_U_dJFKywEe28zo_N6PYyvA" tag="Description" value=""/>
+    <taggedValue xmi:id="_U_dJFaywEe28zo_N6PYyvA" tag="Author" value=""/>
+    <taggedValue xmi:id="_U_dJFqywEe28zo_N6PYyvA" tag="otherParameter"/>
+    <taggedValue xmi:id="_U_lr8KywEe28zo_N6PYyvA" tag="DB ProductName" value="PostgreSQL"/>
+    <taggedValue xmi:id="_U_lr8aywEe28zo_N6PYyvA" tag="DB ProductVersion" value="15.1"/>
+    <taggedValue xmi:id="_U_lr8qywEe28zo_N6PYyvA" tag="DB IdentifierQuoteString" value="&quot;"/>
+    <parameters xmi:id="_U_Q70qywEe28zo_N6PYyvA" key="CONN_PARA_KEY_USERNAME" value="postgres"/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_U_3_0KywEe28zo_N6PYyvA" name="ods_airbnb-listings" dataManager="_U_Q70KywEe28zo_N6PYyvA">
+    <ownedElement xsi:type="orgomg.cwm.resource.relational:Schema" xmi:id="_U_3_0aywEe28zo_N6PYyvA" name="Data_Womans_Company">
+      <ownedElement xsi:type="relational:TdTable" xmi:id="_ZDaGsaywEe28zo_N6PYyvA" name="data" id="_ZDaGsKywEe28zo_N6PYyvA" comment="Tabla asignada por el departamento de Data, la cual contiene todos los datos necesarios para desarrollar el ejercicio del ciclo de vida del Dato, y manejo de ETL" label="data" tableType="TABLE">
+        <taggedValue xmi:id="_ZDaGsqywEe28zo_N6PYyvA" tag="Comment" value="Tabla asignada por el departamento de Data, la cual contiene todos los datos necesarios para desarrollar el ejercicio del ciclo de vida del Dato, y manejo de ETL"/>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaGs6ywEe28zo_N6PYyvA" name="ID" comment="Columna que contiene la identificacion del anfitrion" label="ID" length="10" sourceType="INT4" talendType="id_Integer" key="true">
+          <taggedValue xmi:id="_ZDaGtKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene la identificacion del anfitrion"/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaGtaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaGtqywEe28zo_N6PYyvA" name="INT4" numericPrecisionRadix="10" javaDataType="4"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaGt6ywEe28zo_N6PYyvA" name="Host ID" comment="Columna que contiene el identificador de Host (anfitrión)." label="Host_ID" length="10" sourceType="INT4" talendType="id_Integer" nullable="false">
+          <taggedValue xmi:id="_ZDaGuKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el identificador de Host (anfitrión)."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaGuaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaGuqywEe28zo_N6PYyvA" name="INT4" numericPrecisionRadix="10" javaDataType="4" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaGu6ywEe28zo_N6PYyvA" name="Host Response Rate" comment="Columna que contiene índice de respuestas del anfitrión, o cómo de rápida es la respuesta de los anfitriones." label="Host_Response_Rate" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaGvKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene índice de respuestas del anfitrión, o cómo de rápida es la respuesta de los anfitriones."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaGvaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaGvqywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaGv6ywEe28zo_N6PYyvA" name="Host Listings Count" comment="Columna que contiene el número de alojamientos por anfitrión." label="Host_Listings_Count" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaGwKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el número de alojamientos por anfitrión."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaGwaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaGwqywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaGw6ywEe28zo_N6PYyvA" name="Host Total Listings Count" comment="Columna que contiene el número total de alojamientos por anfitrión." label="Host_Total_Listings_Count" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaGxKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el número total de alojamientos por anfitrión."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaGxaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaGxqywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaGx6ywEe28zo_N6PYyvA" name="Neighbourhood Cleansed" comment="Columna que contiene el barrio donde está localizado el alojamiento." label="Neighbourhood_Cleansed" length="2147483647" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_ZDaGyKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el barrio donde está localizado el alojamiento."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaGyaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaGyqywEe28zo_N6PYyvA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaGy6ywEe28zo_N6PYyvA" name="Neighbourhood Group Cleansed" comment="Columna que contiene el distrito donde se encuentra el alojamiento." label="Neighbourhood_Group_Cleansed" length="2147483647" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_ZDaGzKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el distrito donde se encuentra el alojamiento."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaGzaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaGzqywEe28zo_N6PYyvA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaGz6ywEe28zo_N6PYyvA" name="Zipcode" comment="Columna que contiene el código postal del alojamiento.Identifica por códogos los barrios o distritos." label="Zipcode" length="2147483647" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_ZDaG0KywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el código postal del alojamiento.Identifica por códogos los barrios o distritos."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaG0aywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaG0qywEe28zo_N6PYyvA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaG06ywEe28zo_N6PYyvA" name="Market" comment="Columna que contiene laciudad donde se encuentra el alojamiento." label="Market" length="2147483647" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_ZDaG1KywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene laciudad donde se encuentra el alojamiento."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaG1aywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaG1qywEe28zo_N6PYyvA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaG16ywEe28zo_N6PYyvA" name="Latitude" comment="Columna que contiene la latitud, proporciona la localizacion de un lugar." label="Latitude" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaG2KywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene la latitud, proporciona la localizacion de un lugar."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaG2aywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaG2qywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaG26ywEe28zo_N6PYyvA" name="Longitude" comment="Columna que contiene la longitud geográfica. Proporciona la localización de un. Se mide en grados minutos y segundos." label="Longitude" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaG3KywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene la longitud geográfica. Proporciona la localización de un. Se mide en grados minutos y segundos."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaG3aywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaG3qywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaG36ywEe28zo_N6PYyvA" name="Property Type" comment="Columna que contiene el tipo de propiedad (apartamento, casa, etc.)" label="Property_Type" length="2147483647" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_ZDaG4KywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el tipo de propiedad (apartamento, casa, etc.)"/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaG4aywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaG4qywEe28zo_N6PYyvA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaG46ywEe28zo_N6PYyvA" name="Room Type" comment="Columna que contiene el tipo de habitación (Habitación privada, habitación compartida, apatramento/casa entera, etc.)" label="Room_Type" length="2147483647" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_ZDaG5KywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el tipo de habitación (Habitación privada, habitación compartida, apatramento/casa entera, etc.)"/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaG5aywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaG5qywEe28zo_N6PYyvA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaG56ywEe28zo_N6PYyvA" name="Accommodates" comment="Columna que contiene el número de personas que la propiedad puede acomodar (aforo)." label="Accommodates" length="10" sourceType="INT4" talendType="id_Integer" nullable="false">
+          <taggedValue xmi:id="_ZDaG6KywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el número de personas que la propiedad puede acomodar (aforo)."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaG6aywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaG6qywEe28zo_N6PYyvA" name="INT4" numericPrecisionRadix="10" javaDataType="4" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaG66ywEe28zo_N6PYyvA" name="Bathrooms" comment="Columna que contiene el número de baños del alojamiento." label="Bathrooms" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaG7KywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el número de baños del alojamiento."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaG7aywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaG7qywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaG76ywEe28zo_N6PYyvA" name="Bedrooms" comment="Columna que contiene el número de dormitorios del alojamientos." label="Bedrooms" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaG8KywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el número de dormitorios del alojamientos."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaG8aywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaG8qywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaG86ywEe28zo_N6PYyvA" name="beds" comment="Columna que contiene el número de camas en el alojamientos. Puede ser cualquier tipo de cama." label="beds" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaG9KywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el número de camas en el alojamientos. Puede ser cualquier tipo de cama."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaG9aywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaG9qywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaG96ywEe28zo_N6PYyvA" name="Price" comment="Columna que contiene el precio por noche." label="Price" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaG-KywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el precio por noche."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaG-aywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaG-qywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaG-6ywEe28zo_N6PYyvA" name="Weekly Price" comment="Columna que contiene el precio por semana." label="Weekly_Price" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaG_KywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el precio por semana."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaG_aywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaG_qywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaG_6ywEe28zo_N6PYyvA" name="Monthly Price" comment="Columna que contiene el precio por mes. Precio por semana." label="Monthly_Price" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaHAKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el precio por mes. Precio por semana."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHAaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHAqywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHA6ywEe28zo_N6PYyvA" name="Guests Included" comment="Columna que contiene el número de huéspedes que pueden quedarse en el alojamiento incluidos en el precio." label="Guests_Included" length="10" sourceType="INT4" talendType="id_Integer" nullable="false">
+          <taggedValue xmi:id="_ZDaHBKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el número de huéspedes que pueden quedarse en el alojamiento incluidos en el precio."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHBaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHBqywEe28zo_N6PYyvA" name="INT4" numericPrecisionRadix="10" javaDataType="4" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHB6ywEe28zo_N6PYyvA" name="Extra People" comment="Columna que contiene el precio que los huéspedes tendrán que pagar si quieren invitar personas extra." label="Extra_People" length="10" sourceType="INT4" talendType="id_Integer" nullable="false">
+          <taggedValue xmi:id="_ZDaHCKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el precio que los huéspedes tendrán que pagar si quieren invitar personas extra."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHCaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHCqywEe28zo_N6PYyvA" name="INT4" numericPrecisionRadix="10" javaDataType="4" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHC6ywEe28zo_N6PYyvA" name="Minimum Nights" comment="Columna que contiene el mínimo de noches que hay que reservar para poder alquilar el alojamiento." label="Minimum_Nights" length="10" sourceType="INT4" talendType="id_Integer" nullable="false">
+          <taggedValue xmi:id="_ZDaHDKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el mínimo de noches que hay que reservar para poder alquilar el alojamiento."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHDaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHDqywEe28zo_N6PYyvA" name="INT4" numericPrecisionRadix="10" javaDataType="4" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHD6ywEe28zo_N6PYyvA" name="Maximum Nights" comment="Columna que contiene el número máximo de noches que pueden pernoctar los huéspedes." label="Maximum_Nights" length="10" sourceType="INT4" talendType="id_Integer" nullable="false">
+          <taggedValue xmi:id="_ZDaHEKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el número máximo de noches que pueden pernoctar los huéspedes."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHEaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHEqywEe28zo_N6PYyvA" name="INT4" numericPrecisionRadix="10" javaDataType="4" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHE6ywEe28zo_N6PYyvA" name="Number of Reviews" comment="Columna que contiene el número de reseñas que tiene el alojamiento." label="Number_of_Reviews" length="10" sourceType="INT4" talendType="id_Integer" nullable="false">
+          <taggedValue xmi:id="_ZDaHFKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el número de reseñas que tiene el alojamiento."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHFaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHFqywEe28zo_N6PYyvA" name="INT4" numericPrecisionRadix="10" javaDataType="4" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHF6ywEe28zo_N6PYyvA" name="Review Scores Rating" comment="Columna que contiene la puntuación de las reseñas dejadas por los huéspedes." label="Review_Scores_Rating" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaHGKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene la puntuación de las reseñas dejadas por los huéspedes."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHGaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHGqywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHG6ywEe28zo_N6PYyvA" name="Review Scores Accuracy" comment="Columna que contiene la precisión (exactitud) de la descripción del inmueble escrita por los anfitriones." label="Review_Scores_Accuracy" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaHHKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene la precisión (exactitud) de la descripción del inmueble escrita por los anfitriones."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHHaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHHqywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHH6ywEe28zo_N6PYyvA" name="Review Scores Cleanliness" comment="Columna que contieene la puntuación de la limpieza de los alojamientos." label="Review_Scores_Cleanliness" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaHIKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contieene la puntuación de la limpieza de los alojamientos."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHIaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHIqywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHI6ywEe28zo_N6PYyvA" name="Review Scores Checkin" comment="Columna que contiene la puntuación del check-in del alojamiento. Puntuación de 1 a 10." label="Review_Scores_Checkin" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaHJKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene la puntuación del check-in del alojamiento. Puntuación de 1 a 10."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHJaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHJqywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHJ6ywEe28zo_N6PYyvA" name="Review Scores Communication" comment="Columna que contiene la puntuación que han dejado los huéspedes sobre la comunicación con el anfitrión o anfitriones." label="Review_Scores_Communication" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaHKKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene la puntuación que han dejado los huéspedes sobre la comunicación con el anfitrión o anfitriones."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHKaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHKqywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHK6ywEe28zo_N6PYyvA" name="Review Scores Location" comment="Columna que contiene la puntuación que han dejado los huéspedes sobre la ubicación del inmueble." label="Review_Scores_Location" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaHLKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene la puntuación que han dejado los huéspedes sobre la ubicación del inmueble."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHLaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHLqywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHL6ywEe28zo_N6PYyvA" name="Review Scores Value" comment="Columna que contiene la puntuación del valor por el precio pagado por e huésped. Los huéspedes valoran si merece la pena quedarse en el inmueble o no." label="Review_Scores_Value" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaHMKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene la puntuación del valor por el precio pagado por e huésped. Los huéspedes valoran si merece la pena quedarse en el inmueble o no."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHMaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHMqywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHM6ywEe28zo_N6PYyvA" name="Cancellation Policy" comment="Columna que contiene la política de cancelación impuesta por el anfitrion (estricta, moderada, etc.)." label="Cancellation_Policy" length="2147483647" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_ZDaHNKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene la política de cancelación impuesta por el anfitrion (estricta, moderada, etc.)."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHNaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHNqywEe28zo_N6PYyvA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHN6ywEe28zo_N6PYyvA" name="Reviews per Month" comment="Columna que contiene el número de reseñas de un alojamiento por mes." label="Reviews_per_Month" length="17" precision="17" sourceType="FLOAT8" talendType="id_Double" nullable="false">
+          <taggedValue xmi:id="_ZDaHOKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene el número de reseñas de un alojamiento por mes."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHOaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHOqywEe28zo_N6PYyvA" name="FLOAT8" numericPrecision="17" numericPrecisionRadix="10" javaDataType="8" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHO6ywEe28zo_N6PYyvA" name="Geolocation" comment="Columna que contiene la geolocalización, las coordenadas de la ubicación del inmueble." label="Geolocation" length="2147483647" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_ZDaHPKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene la geolocalización, las coordenadas de la ubicación del inmueble."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHPaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHPqywEe28zo_N6PYyvA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+        </feature>
+        <feature xsi:type="relational:TdColumn" xmi:id="_ZDaHP6ywEe28zo_N6PYyvA" name="Features" comment="Columna que contiene información sobre el anfitrión, si el anfitrion es superhost o host normal." label="Features" length="2147483647" sourceType="VARCHAR" talendType="id_String" nullable="false">
+          <taggedValue xmi:id="_ZDaHQKywEe28zo_N6PYyvA" tag="Comment" value="Columna que contiene información sobre el anfitrión, si el anfitrion es superhost o host normal."/>
+          <initialValue xsi:type="relational:TdExpression" xmi:id="_ZDaHQaywEe28zo_N6PYyvA" language="COLUMN_DEF"/>
+          <sqlDataType xmi:id="_ZDaHQqywEe28zo_N6PYyvA" name="VARCHAR" numericPrecisionRadix="10" javaDataType="12" nullable="columnNullable"/>
+        </feature>
+      </ownedElement>
+    </ownedElement>
+  </orgomg.cwm.resource.relational:Catalog>
+</xmi:XMI>

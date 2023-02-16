@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_pMtsYKyLEe28zo_N6PYyvA" id="_pMtFUKyLEe28zo_N6PYyvA" label="DeltaLakeFilterColumns" version="0.1" item="_pMtsYqyLEe28zo_N6PYyvA">
+    <author href="../../../talend.project#_jkMksayLEe28zo_N6PYyvA"/>
+    <additionalProperties xmi:id="_pMuTcKyLEe28zo_N6PYyvA" key="created_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_pMvhkKyLEe28zo_N6PYyvA" key="created_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_pMvhkayLEe28zo_N6PYyvA" key="created_date" value="2023-02-14T18:18:48.359+0100"/>
+    <additionalProperties xmi:id="_pMvhkqyLEe28zo_N6PYyvA" key="modified_product_fullname" value="Talend Open Studio for Data Integration"/>
+    <additionalProperties xmi:id="_pMvhk6yLEe28zo_N6PYyvA" key="modified_product_version" value="8.0.1.20211109_1610"/>
+    <additionalProperties xmi:id="_pMvhlKyLEe28zo_N6PYyvA" key="modified_date" value="2023-02-14T18:18:48.359+0100"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_pMtsYayLEe28zo_N6PYyvA" path="DeltaLake/system"/>
+  <TalendProperties:SQLPatternItem xmi:id="_pMtsYqyLEe28zo_N6PYyvA" property="_pMtsYKyLEe28zo_N6PYyvA" state="_pMtsYayLEe28zo_N6PYyvA" system="true" eltName="DeltaLake">
+    <content href="DeltaLakeFilterColumns_0.1.item#/"/>
+  </TalendProperties:SQLPatternItem>
+</xmi:XMI>

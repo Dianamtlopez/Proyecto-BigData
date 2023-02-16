@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="4"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="airbnb-listings" is-template="false" allow-conns="true">
+	<role name="postgres"/>
+	<comment><![CDATA[Base de datos creada para la creacion del data warehouse]]></comment>
+</database>
+
+<schema name="public" layers="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<schema name="Data_Womans_Company" layers="0" alias="dwc" rect-visible="true" fill-color="#e1e1e1">
+	<role name="postgres"/>
+	<comment><![CDATA[Esquema que contiene el nombre del grupo de desarrollo]]></comment>
+</schema>
+
+<table name="data" layers="0" alias="data" collapse-mode="2" max-obj-count="43" z-value="0">
+	<schema name="&quot;Data_Womans_Company&quot;"/>
+	<role name="postgres"/>
+	<comment><![CDATA[Tabla asignada por el departamento de Data, la cual contiene todos los datos necesarios para desarrollar el ejercicio del ciclo de vida del Dato, y manejo de ETL]]></comment>
+	<appended-sql><![CDATA[(
+	"Host ID" integer NOT NULL,
+	"Host Response Rate" float,
+	"Host Listings Count" float,
+	"Host Total Listings Count" float,
+	"Neighbourhood Cleansed" varchar,
+	"Neighbourhood Group Cleansed" varchar,
+	"Zipcode" varchar,
+	"Latitude" float,
+	"Longitude" float,
+	"Property Type" varchar,
+	"Room Type" varchar,
+	"Accommodates" integer,
+	"Bathrooms" float,
+	"Bedrooms" float,
+	"Beds" float,
+	"Price" float,
+	"Weekly Price" float,
+	"Monthly Price" float,
+	"Guests Included" integer,
+	"Extra People" integer,
+	"Minimum Nights" integer,
+	"Maximum Nights" integer,
+	"Number of Reviews" integer,
+	"Review Scores Rating" float,
+	"Review Scores Accuracy" float,
+	"Review Scores Cleanliness" float,
+	"Review Scores Checkin" float,
+	"Review Scores Communication" float,
+	"Review Scores Location" float,
+	"Review Scores Value" float,
+	"Cancellation Policy" varchar,
+	"Reviews per Month" float,
+	"Geolocation" varchar,
+	"Features" varchar,
+	CONSTRAINT "data_pk" PRIMARY KEY ("Host ID")
+);]]></appended-sql>
+	<position x="46" y="74"/>
+	<column name="ID" alias="id" not-null="true">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Columna que contiene la identificacion del anfitrion]]></comment>
+	</column>
+	<column name="Host ID" alias="hid">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Columna que contiene el identificador de Host (anfitrión).]]></comment>
+	</column>
+	<column name="Host Response Rate" alias="hrrat">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene índice de respuestas del anfitrión, o cómo de rápida es la respuesta de los anfitriones.]]></comment>
+	</column>
+	<column name="Host Listings Count" alias="hlc">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene el número de alojamientos por anfitrión.]]></comment>
+	</column>
+	<column name="Host Total Listings Count" alias="htlc">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene el número total de alojamientos por anfitrión.]]></comment>
+	</column>
+	<column name="Neighbourhood Cleansed" alias="nclen">
+		<type name="varchar" length="0"/>
+		<comment><![CDATA[Columna que contiene el barrio donde está localizado el alojamiento.]]></comment>
+	</column>
+	<column name="Neighbourhood Group Cleansed" alias="ngclen">
+		<type name="varchar" length="0"/>
+		<comment><![CDATA[Columna que contiene el distrito donde se encuentra el alojamiento.]]></comment>
+	</column>
+	<column name="Zipcode" alias="zip">
+		<type name="varchar" length="0"/>
+		<comment><![CDATA[Columna que contiene el código postal del alojamiento.Identifica por códogos los barrios o distritos.]]></comment>
+	</column>
+	<column name="Market" alias="mark">
+		<type name="varchar" length="0"/>
+		<comment><![CDATA[Columna que contiene laciudad donde se encuentra el alojamiento.]]></comment>
+	</column>
+	<column name="Latitude" alias="lat">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene la latitud, proporciona la localizacion de un lugar.]]></comment>
+	</column>
+	<column name="Longitude" alias="long">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene la longitud geográfica. Proporciona la localización de un. Se mide en grados minutos y segundos.]]></comment>
+	</column>
+	<column name="Property Type" alias="pt">
+		<type name="varchar" length="0"/>
+		<comment><![CDATA[Columna que contiene el tipo de propiedad (apartamento, casa, etc.)]]></comment>
+	</column>
+	<column name="Room Type" alias="rt">
+		<type name="varchar" length="0"/>
+		<comment><![CDATA[Columna que contiene el tipo de habitación (Habitación privada, habitación compartida, apatramento/casa entera, etc.)]]></comment>
+	</column>
+	<column name="Accommodates" alias="accom">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Columna que contiene el número de personas que la propiedad puede acomodar (aforo).]]></comment>
+	</column>
+	<column name="Bathrooms" alias="batr">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene el número de baños del alojamiento.]]></comment>
+	</column>
+	<column name="Bedrooms" alias="betr">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene el número de dormitorios del alojamientos.]]></comment>
+	</column>
+	<column name="beds" alias="be">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene el número de camas en el alojamientos. Puede ser cualquier tipo de cama.]]></comment>
+	</column>
+	<column name="Price" alias="pr">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene el precio por noche.]]></comment>
+	</column>
+	<column name="Weekly Price" alias="wp">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene el precio por semana.]]></comment>
+	</column>
+	<column name="Monthly Price" alias="mp">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene el precio por mes. Precio por semana.]]></comment>
+	</column>
+	<column name="Guests Included" alias="gin">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Columna que contiene el número de huéspedes que pueden quedarse en el alojamiento incluidos en el precio.]]></comment>
+	</column>
+	<column name="Extra People" alias="ep">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Columna que contiene el precio que los huéspedes tendrán que pagar si quieren invitar personas extra.]]></comment>
+	</column>
+	<column name="Minimum Nights" alias="minnig">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Columna que contiene el mínimo de noches que hay que reservar para poder alquilar el alojamiento.]]></comment>
+	</column>
+	<column name="Maximum Nights" alias="maxnig">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Columna que contiene el número máximo de noches que pueden pernoctar los huéspedes.]]></comment>
+	</column>
+	<column name="Number of Reviews" alias="numofre">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[Columna que contiene el número de reseñas que tiene el alojamiento.]]></comment>
+	</column>
+	<column name="Review Scores Rating" alias="rsrat">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene la puntuación de las reseñas dejadas por los huéspedes.]]></comment>
+	</column>
+	<column name="Review Scores Accuracy" alias="rsacu">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene la precisión (exactitud) de la descripción del inmueble escrita por los anfitriones.]]></comment>
+	</column>
+	<column name="Review Scores Cleanliness" alias="rscle">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contieene la puntuación de la limpieza de los alojamientos.]]></comment>
+	</column>
+	<column name="Review Scores Checkin" alias="rsch">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene la puntuación del check-in del alojamiento. Puntuación de 1 a 10.]]></comment>
+	</column>
+	<column name="Review Scores Communication" alias="rscom">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene la puntuación que han dejado los huéspedes sobre la comunicación con el anfitrión o anfitriones.]]></comment>
+	</column>
+	<column name="Review Scores Location" alias="rsl">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene la puntuación que han dejado los huéspedes sobre la ubicación del inmueble.]]></comment>
+	</column>
+	<column name="Review Scores Value" alias="rdv">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene la puntuación del valor por el precio pagado por e huésped. Los huéspedes valoran si merece la pena quedarse en el inmueble o no.]]></comment>
+	</column>
+	<column name="Cancellation Policy" alias="canpol">
+		<type name="varchar" length="0"/>
+		<comment><![CDATA[Columna que contiene la política de cancelación impuesta por el anfitrion (estricta, moderada, etc.).]]></comment>
+	</column>
+	<column name="Reviews per Month" alias="rpm">
+		<type name="float" length="0"/>
+		<comment><![CDATA[Columna que contiene el número de reseñas de un alojamiento por mes.]]></comment>
+	</column>
+	<column name="Geolocation" alias="geo">
+		<type name="varchar" length="0"/>
+		<comment><![CDATA[Columna que contiene la geolocalización, las coordenadas de la ubicación del inmueble.]]></comment>
+	</column>
+	<column name="Features" alias="fea">
+		<type name="varchar" length="0"/>
+		<comment><![CDATA[Columna que contiene información sobre el anfitrión, si el anfitrion es superhost o host normal.]]></comment>
+	</column>
+	<constraint name="data_pk" type="pk-constr" alias="d_pk" table="&quot;Data_Womans_Company&quot;.data">
+		<columns names="ID" ref-type="src-columns"/>
+		<comment><![CDATA[Llave primaria de la tabla data]]></comment>
+	</constraint>
+</table>
+
+</dbmodel>
